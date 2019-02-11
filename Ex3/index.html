@@ -1,7 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Places I want to visit</title>
+	<meta name="description" content="Legend using CSS and HTML">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Legend</title>
+  </head>
+  <style>
+    body {
+      margin: 15px;
+    }
+
+    .legendBox {
+      display: block;
+      border-style: solid;
+      border-width: 1px;
+      width: 50px;
+      height: 20px;
+      background-color: yellow;
+      /*set a default color*/
+      float: left;
+    }
+
+    .legendLine {
+      display: block;
+      border-style: solid;
+      border-width: 0px;
+      width: 52px;
+      height: 2px;
+      float: left;
+      margin-top: 8px;
+    }
+
+    .legendTitle {
+      font-weight: bold;
+      line-height: 1.6;
+    }
+
+  </style>
+
+  <body>
+    <h4>
+      Legend
+      <h4>
+        <br>
+        <span class="legendTitle">Legend</span><br>
+        <div class="legendBox" style="background-color:none;border-color:skyblue"></div>
+        &nbsp Story_County
+        <p></p>
+        <div class="legendBox" style="background-color:green;"></div>
+        &nbsp Polygon item 2
+        <p></p>
+        <div class="legendBox" style="background-color:red;"></div>
+        &nbsp Polygon item 3
+        <p></p>
+        <div class="legendLine" style="background-color:aqua"></div>
+        &nbsp Line item 1
+        <p></p>
+        <div class="legendLine" style="background-color:#800000"></div>
+        &nbsp Line item 2
+        <p></p>
+
+
+   <title>Population in Story County, Iowa</title>
     <style>
      body {background-color: beige}
      a:link, a:visited {
@@ -46,6 +107,7 @@
     text-align: center;
         }
     h4{color:black; text-align: center; font-size: 15px}
+
     </style>
 
 </head>
