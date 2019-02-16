@@ -14,24 +14,24 @@
     background-color: beige; clear: left; text-align: center;}
     h1,h2 {color: Teal; text-align: center;
     	text-decoration: none; font-size: 24px;
-    	font-family: helvetica;}
+    	font-family: Calibri;}
     h3 {color: DarkSlateGray; text-align: center; text-decoration: none; font-size: 20px;
-    	font-family: helvetica;}
+    	font-family: Calibri;}
     h4 {color:SlateGray; text-align: center; 
-    	font-size: 15px; font-family: helvetica;}   
+    	font-size: 15px; font-family: Calibri;}   
     p { color:Black;
     	margin-left: 15%;
     	margin-right: 15%;
     	text-align: justify; 
     	text-decoration: none;
     	font-size: 20px;
-    	font-family: helvetica; }
+    	font-family: Calibri; }
     img{ border: 1px solid black;align-content: center}
     </style>
 </head>
 <body>
     <header>
-        <h1>CRP 558 WWEB MAPPING/GIS</h1>
+        <h1>CRP 558 WEB MAPPING/GIS</h1>
         <h2> Assignment 1: Javascript Skills </h2>
     </header>
 
