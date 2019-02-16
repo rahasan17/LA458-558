@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width">
     <style>
     body {
-     	background-color: beige; 
+     	background-color: none; 
      	margin-top: 5%; 
      	margin-bottom: 5%; 
      	margin-left: auto; }
     header, footer { padding: 1em; color: white;
-    background-color: beige; clear: left; text-align: center;}
-    h1,h2 {color: Teal; text-align: center;
+    background-color: Black; clear: none; text-align: center;}
+    h1,h2 {color: Teal; text-align: center; background: white;
     	text-decoration: none; font-size: 25px;
     	font-family: Calibri;}
     h3 {color: DarkSlateGray; text-align: center; text-decoration: none; font-size: 20px;
@@ -22,18 +22,34 @@
     p { color:Black;
     	margin-left: 15%;
     	margin-right: 15%;
-    	text-align: justify; 
+    	text-align: center; 
     	text-decoration: none;
     	font-size: 20px;
     	font-family: Calibri; }
-    img{ border: 1px solid black;align-content: center}
     </style>
 </head>
 <body>
     <header>
-        <h1>CRP 558 WEB MAPPING/GIS</h1>
-        <h2> Assignment 1: Javascript Skills </h2>
+        <h1>CRP 558 WEB MAPPING/GIS</h1><br>
+    Assignment 1: Javascript Skills </h1>
     </header>
+    <!---exaplme of using input menthod---->
+    <p><class="clearfloat"> <h3>Number Calculation</h3> </class></p>
+    <p>
+    Please, Write the First Number  <input  id="input1"  type="text" size="6"><br>
+    Please, Pick The Operator
+    <select id="mathsigns" >
+        <option value="+"> + </option>
+        <option value="-"> - </option>
+        <option value="*"> *</option>
+        <option value="/"> / </option>
+    </select>
+    <br>
+    Please, Write the Second Number
+    <input  id="input2" type="text"  size="6">
+    <br>
+    <button onclick="calculate()"> Result</button> = <span id="theResult"></span>
+    </p> 
 
 
 
