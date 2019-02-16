@@ -46,9 +46,104 @@
     <br>
     <button onclick="calculate()"> Result</button> = <span id="theResult"></span>
     </p> 
+<footer> ©Rakibul Ahasan, Iowa State University.</footer>
 
+<script> 
+  
+    // <!---exaplme of using input menthod---->
+  {  
+    function calculate() 
+    {
+	var input1 = parseInt(document.getElementById("input1").value);
+	var operator = document.getElementById("mathsigns").value;
+	var input2 = parseInt(document.getElementById("input2").value);
+		
+	switch(operator) // The use of switch operator 
+    {
+        case '+':
+            result=input1+input2;
+            break;
+		case '-':
+			result = input1 - input2;
+			break;
+		case '*':
+			result = input1 * input2;
+			break;
+		case '/':
+			 result = input1 / input2;
+			 break;
+		default:
+			result = " Error";
+	}
+	document.getElementById("theResult").innerHTML=result;
+}
+  }
+</script>
+    
+<script>
+   // <!---exaplme of using input menthod---->
+   // <!---exaplme of using array menthod---->
+     
+    var pets=["Dog","Cat","Water_dragon"];
+    document.getElementById("Mypet").innerHTML=pets;
+    
+    function petname(){
+        pets.sort();
+        pets.reverse();
+        document.getElementById("Mypet").innerHTML=pets;
+        }
+    
+   // <!---exaplme of using array menthod---->
 
+  // <!---exaplme of using loop menthod---->
+    
+var text = "";
+var i;
+for (i = 0; i < 5; i++) 
+{
+    text += "The number is " + i + "<br>";
+}
+document.getElementById("shoaib").innerHTML = text;
+    
+</script>
+<script>
+   {  
+    function shoaib() 
+    {
+	
+	var  text=document.getElementById("day").value;
+		
+	switch(text) // The use of switch operator 
+    {
+        case '1':
+            text="This is Holiday";
+            break;
+		case '2':
+			text = "Holiday";
+			break;
+		case '3':
+			text = "Weekday";
+			break;
+		case '4':
+			 text ="Weekday";
+			 break;
 
+         case '5':
+			text = "Weekday";
+			break;
+		case '6':
+			text = "Weekday";
+			break;
+		case '7':
+			 text = "Weekday";
+			 break;
+		default:
+			text = "Error";
+	}
+	document.getElementById("Hurrah").innerHTML=text;
+}
+  }
+</script>
 
 </body>
 </html>
