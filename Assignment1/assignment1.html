@@ -51,6 +51,17 @@
 <p>This day is <button onclick="ahasan()"> Let's see </button> = <span id="Hurrah"></span> </p>
 <br>
 <!-----PLease select a day ---->
+ 
+<p>
+  <label for="amount">Enter State Number:</label>
+  <input type="text" id="statenum" style="border: 1; font-weight: bold;" onChange="stateDisplay()" value="-" size="6"/>
+</p>
+<div id="slider-range-max"></div>
+<br><br>
+<div id="stateName">-</div>
+ 
+ 
+
 <footer> ©Rakibul Ahasan, MCRP & MSTrans <br> Department of Community and Regional Planning <br> Iowa State University. </footer>
 
 <script> 
@@ -135,6 +146,19 @@ document.getElementById("ahasan").innerHTML = text;
 }
   }
 </script>
+<script>
+  //load values into array
+  var stateList = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+  
+  console.log(stateList.length); //will print 52
+  
+  function stateDisplay() {
+      x = document.getElementById("stateNum").value;
+      //remember Adair is item 0 in the array so x-1 is necessary.
+      console.log("wrong: "+stateList[x]+",  correct: "+stateList[x-1]);
+      document.getElementById("stateName").innerHTML = stateList[x-1];
+  } 
+  </script> 
 
 </body>
 </html>
