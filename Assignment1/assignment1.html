@@ -56,10 +56,17 @@
 <p text-align="center">
     <label for="amount">Enter State Number:</label>
     <input type="text" id="statenum" style="border: 1; font-weight: bold;" onChange="stateDisplay()" value="0" size="8"/>
-    <div id="slider-range-max"></div>
-    <div  id="stateName"></div>
-</p>
+    <span id="slider-range-max"></span>
+    <span id="stateName"></span></p>
  
+<body onload="load()">
+<h4>Academic Credentials</h4>
+    Degree: <span class='bold' id='Degree'>-</span><br>
+    Location: <span class="bold" id='Location'>-</span><br>
+    Year: <span class="bold" id='Year'>-</span><br>
+    Institution: <span class='bold' id='Institution'>-</span><br>
+    <br>
+</body>
 
 <footer> ©Rakibul Ahasan, MCRP & MSTrans <br> Department of Community and Regional Planning <br> Iowa State University. 
 </footer>
@@ -159,6 +166,23 @@ document.getElementById("ahasan").innerHTML = text;
     document.getElementById("stateName").innerHTML = stateList[x-1];
   } 
   </script> 
+  <script>
+//make an array of objects
+var credential = [
+    {Degree: "BURP", Location: "Khulna, Bangladesh", Year: 2016, Institution: "Khulna University"},
+    {Degree: "MURP", Location: "Khulna, Bangladesh", Institution: 2015, Institution: "Khulna University"},
+    {Degree: "MCRP", Location: "Iowa, USA", Year: 2019, Institution: "Iowa State University"},
+    {Degree: "MSTrans", Location: "Iowa, USA", Year: 2019, Institution: "Iowa State University"}
+];
 
+var i = 0;
+function load() {
+    document.getElementById("Degree").innerHTML = credential[i].Degree;
+    document.getElementById("Location").innerHTML = credential[i].Location;
+    document.getElementById("Year").innerHTML = credential[i].Year;
+    document.getElementById("Institution").innerHTML = credential[i].Institution;
+}
+
+</script>
 </body>
 </html>
