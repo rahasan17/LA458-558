@@ -17,16 +17,17 @@
     <header>
        <h1>CRP 558 WEB MAPPING/GIS <br> Assignment 1: JavaScript Skills </h1>
     </header>
+<!---exaplme of using text input method with two inputs and a button---->
     <p>
-        <h3>Example of Using Text Input<h3>
-            <h4> What is your name?</h4>
+        <h2>Example of Using Text Input<h2>
+            <h3> What is your name?</h3>
             <p>First name: <input type="text" id="firstName" value="write your first name here"><br>
                 Last name: <input type="text" id="lastName" value="write your last name here"><br><br>
-                <button onclick="myName()">Click</button><br>
+                <button onclick="Name()">Name</button><br>
 
 <p id="show"> </p>
 <script id="jsbin-javascript">
-    function myName() {
+    function Name() {
       {var x=document.getElementById("firstName").value;
       var y=document.getElementById("lastName").value;
         }
@@ -34,7 +35,7 @@
     }
 </script>
 
-<!---exaplme of using input menthod with two inputs and a button---->
+<!---exaplme of using input method with two inputs and a button---->
     <p><class="clearfloat"> <h3>Calculating a Number based on two inputs</h3> </class></p>
     <p>
     Please, Write the First Number  <input  id="input1"  type="text" size="6"><br>
@@ -131,14 +132,25 @@
   }
 </script>
 
-<!-----PLease select a day ---->
-
-<p text-align="center"> <h3> Let's find out the alphabetic order of US States </h3> </p>
-<p text-align="center">
+<!-----Example of using Array method---->
+<h3> Let's find out the alphabetic order of US States </h3>
+<p>
     <label for="amount">Enter State Number:</label>
     <input type="text" id="statenum" style="border: 1; font-weight: bold;" onChange="stateDisplay()" value="0" size="8"/>
     <span id="slider-range-max"></span>
-    <span id="stateName"></span></p>
+    <span id="stateName"></span>
+</p>
+
+<script>
+  var stateList = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+  
+  console.log(stateList.length);
+    function stateDisplay() {
+    x = document.getElementById("statenum").value;
+    console.log("wrong: "+stateList[x]+",  correct: "+stateList[x-1]);
+    document.getElementById("stateName").innerHTML = stateList[x-1];
+  } 
+  </script> 
 
 <body onload="load()">
 <input type="button" onclick="AcademicList(1)" value="Academic credential">
@@ -162,17 +174,7 @@ document.getElementById("ahasan").innerHTML = text;
 </script>
 
      <!---exaplme of using array menthod---->
-<script>
-  //load values into array
-  var stateList = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
-  
-  console.log(stateList.length);
-    function stateDisplay() {
-    x = document.getElementById("statenum").value;
-    console.log("wrong: "+stateList[x]+",  correct: "+stateList[x-1]);
-    document.getElementById("stateName").innerHTML = stateList[x-1];
-  } 
-  </script> 
+
   <script>
 //make an array of objects
 var credential = [
