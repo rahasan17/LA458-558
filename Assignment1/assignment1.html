@@ -200,7 +200,18 @@ function load() {
 </script>
 </body>
                     <!-----Example of Loops---->
-
+<h3>One last thing using loops</h3>                    
+<h4>Places I want to visit</h4>
+<p id="places"></p>
+<script>
+var place = ["Fiji", "Maldives", "Greece", "Hawaii", "Alpes", "Australia", "Sahara", "Amazon"];
+var text = "";
+var i;
+for (i = 0; i < place.length; i++) {
+  text += place[i] + "<br>";
+}
+document.getElementById("places").innerHTML = text;
+</script>
 <footer> ©Rakibul Ahasan, MCRP & MSTrans <br> Department of Community and Regional Planning <br> Iowa State University. 
 </footer>
 
