@@ -17,23 +17,22 @@
     <header>
        <h1>CRP 558 WEB MAPPING/GIS <br> Assignment 1: JavaScript Skills </h1>
     </header>
-
-<!---exaplme of using text input method with two inputs and a button---->
+                    <!---exaplme of using text input method with two inputs and a button---->
 <h3> What is your name?</h3>
             <p>First name: <input type="text" id="firstName"><br>
-                Last name: <input type="text" id="lastName"><br>
+                Last name: <input type="text" id="lastName"><br><br>
                 <button onclick="Name()">Name</button><br></p>
-<p id="show"> </p>
+<p id="display"> </p>
 <script id="jsbin-javascript">
     function Name() {
       {var x=document.getElementById("firstName").value;
       var y=document.getElementById("lastName").value;
         }
-        document.getElementById("show").innerHTML = x+" " +y;
+        document.getElementById("display").innerHTML = x+" " +y;
     }
 </script>
 
-                <!---exaplme of using input method with two inputs and a button---->
+                    <!---exaplme of using numeric input method with two inputs and a button---->
     <p><class="clearfloat"> <h3>Calculating a Number based on two inputs</h3> </class></p>
     <p>
     Please, Write the First Number  <input  id="input1"  type="text" size="6"><br>
@@ -77,8 +76,8 @@
 }
   }
 </script>
-                    <!-----PLease select a day ---->
-	<p text-align="center"> <h3> Let's see is it weeday or weekend </h3> </p>
+                    <!-----Select a day to see whether its weekend or weekday ---->
+<h3> Let's see is it weeday or weekend </h3>
 <p> 
     <select id="day" >
 	<option value="1"> Saturday </option>
