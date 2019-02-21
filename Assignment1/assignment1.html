@@ -134,9 +134,7 @@
     <label for="amount">Enter State Number:</label>
     <input type="text" id="statenum" style="border: 1; font-weight: bold;" onChange="stateDisplay()" value="0" size="8"/>
     <span id="slider-range-max"></span>
-    <span id="stateName"></span>
-</p>
-
+    <span id="stateName"></span></p>
 <script>
     var stateList = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
     console.log(stateList.length);
@@ -151,12 +149,12 @@
 <input type="button" onclick="AcademicList()" value="Academic credential">
 <br>
 <body onload="load()">
-<b>Credentials</b><br>
+<h4><b>Credentials</b><br>
 <b> Degree: </b> <span id='Degree'>-</span><br>
 <b> Location: </b> <span id='Location'>-</span><br>
 <b> Year: </b> <span id='Year'>-</span><br>
 <b> Institution: </b> <span id='Institution'>-</span><br>
-
+</h4>
 <script>
     //make an array of objects
 var credential = [
