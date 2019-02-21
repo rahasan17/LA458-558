@@ -158,29 +158,23 @@ Location: <span id='Location'>-</span><br>
 Year: <span id='Year'>-</span><br>
 Institution: <span id='Institution'>-</span><br>
 <br>
-
-</body>
-
-<footer> ©Rakibul Ahasan, MCRP & MSTrans <br> Department of Community and Regional Planning <br> Iowa State University. 
-</footer>
-
-
-    
 <script>
-   // <!---exaplme of using input menthod---->
-document.getElementById("ahasan").innerHTML = text;
-</script>
-
-
-
-  <script>
 //make an array of objects
 var credential = [
-    {Degree: "BURP", Location: "Khulna, Bangladesh", Year: 2016, Institution: "Khulna University"},
+    {
+        Degree: "BURP",
+        Location: "Bangladesh",
+        Year: 2016,
+        Institution: "Khulna University"
+    },
     {Degree: "MURP", Location: "Khulna, Bangladesh", Institution: 2015, Institution: "Khulna University"},
-    {Degree: "MCRP", Location: "Iowa, USA", Year: 2019, Institution: "Iowa State University"},
+    {
+        Degree: "MCRP",
+        Location: "USA", Year: 2019,
+        Institution: "Iowa State University"
+    },
     {Degree: "MSTrans", Location: "Iowa, USA", Year: 2019, Institution: "Iowa State University"}
-];
+    ];
 
 var i = 0;
 function AcademicList() {
@@ -205,6 +199,18 @@ function load() {
 }
 
 </script>
+</body>
+
+<footer> ©Rakibul Ahasan, MCRP & MSTrans <br> Department of Community and Regional Planning <br> Iowa State University. 
+</footer>
+
+
+    
+<script>
+   // <!---exaplme of using input menthod---->
+document.getElementById("ahasan").innerHTML = text;
+</script>
+
 
 </body>
 </html>
