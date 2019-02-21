@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <style>
+    body {background-color: none; }
     header, footer { padding: 0.5em; color: white; background-color: DarkSlateGray; clear: none; text-align: center;}
     h1,h2 {color: White; text-align: center; background: none; font-size: 28px; font-family: Calibri;}
     h3 {color: Black; text-align: center; font-size: 24px; font-family: Calibri;}
@@ -16,19 +17,11 @@
     <header>
        <h1>CRP 558 WEB MAPPING/GIS <br> Assignment 1: JavaScript Skills </h1>
     </header>
-    <button class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}">
-        Pick text color
-    </button>
-    <script>
-    function setTextColor(picker) {
-        document.getElementsByTagName('body')[0].style.color = '#' + picker.toString()
-    }
-    </script>
 
 <!---exaplme of using text input method with two inputs and a button---->
 <h3> What is your name?</h3>
-            <p>First name: <input type="text" id="firstName" value="write your first name here"><br>
-                Last name: <input type="text" id="lastName" value="write your last name here"><br><br>
+            <p>First name: <input type="text" id="firstName"><br>
+                Last name: <input type="text" id="lastName"><br>
                 <button onclick="Name()">Name</button><br></p>
 <p id="show"> </p>
 <script id="jsbin-javascript">
