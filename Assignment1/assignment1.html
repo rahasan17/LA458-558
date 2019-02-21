@@ -99,7 +99,7 @@
     function ahasan() 
     {
         var  text=document.getElementById("day").value;
-        switch(text) // The use of switch operator 
+        switch(text)
     {
         case '1':
             text="At Last! Weekend.";
@@ -148,8 +148,8 @@
     document.getElementById("stateName").innerHTML = stateList[x-1];
   } 
   </script> 
-
-<body onload="load()">
+<!-----Example of using JavaScript Object---->
+<h3> Let's find something about me. </h3>
 <input type="button" onclick="AcademicList(1)" value="Academic credential">
 <br>
 <b>Credential</b><br>
@@ -158,21 +158,7 @@ Location: <span id='Location'>-</span><br>
 Year: <span id='Year'>-</span><br>
 Institution: <span id='Institution'>-</span><br>
 <br>
-</body>
-
-<footer> ©Rakibul Ahasan, MCRP & MSTrans <br> Department of Community and Regional Planning <br> Iowa State University. 
-</footer>
-
-
-    
 <script>
-   // <!---exaplme of using input menthod---->
-document.getElementById("ahasan").innerHTML = text;
-</script>
-
-
-
-  <script>
 //make an array of objects
 var credential = [
     {Degree: "BURP", Location: "Khulna, Bangladesh", Year: 2016, Institution: "Khulna University"},
@@ -204,6 +190,10 @@ function load() {
 }
 
 </script>
+</body>
+
+<footer> ©Rakibul Ahasan, MCRP & MSTrans <br> Department of Community and Regional Planning <br> Iowa State University. 
+</footer>
 
 </body>
 </html>
