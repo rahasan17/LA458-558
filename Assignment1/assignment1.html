@@ -148,16 +148,17 @@
     document.getElementById("stateName").innerHTML = stateList[x-1];
   } 
   </script> 
-<!-----Example of using JavaScript Object---->
+<!-----Example of using JavaScript Objects---->
 <h3> Let's find something about me. </h3>
-<input type="button" onclick="AcademicList(1)" value="Academic credential">
+<input type="button" onclick="AcademicList()" value="Academic credential">
 <br>
-<b>Credential</b><br>
+<body onload="load()">
+<b>Credentials</b><br>
 Degree: <span id='Degree'>-</span><br>
 Location: <span id='Location'>-</span><br>
 Year: <span id='Year'>-</span><br>
 Institution: <span id='Institution'>-</span><br>
-<br>
+
 <script>
 //make an array of objects
 var credential = [
