@@ -45,8 +45,7 @@
             .bindPopup("Khulna University")
             .openPopup();
     </script>
-
-<br>
+    <br>
     Pan to <a href="javascript:frasier()">Dhaka, Bangladesh</a><br>
     <a href="#" id='zoomOut'>Zoom out to level 10</a><br>
     <button id="ames">Visit Ames, Iowa</button>
@@ -87,24 +86,21 @@
         });
     </script>
     <script>
-var map = L.map('map').setView([41.058699, 23.427364], 8);
-
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-L.marker([41.058699, 23.427364]).addTo(map)
-   .bindPopup("Mario's hometown in Greece")
-   .openPopup();
+        var map = L.map('map').setView([22.802, 89.533], 10);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker([22.802, 89.533]).addTo(map)
+        .bindPopup("The City I Love")
+        .openPopup();
 
 var cities = [
-    [39.549589, 19.876734, "Corfu, Greece"],
-    [40.626377, 22.948359, "Thessaloniki, Greece"],
-    [37.971514, 23.726758, "Athens, Greece"],
+    [41.590833, -93.620833, "Des Moines, Iowa"],
+    [41.401389, -95.010833, "Atlantic, Iowa"],
+    [22.7, 91.1, "Noakhali, Bangladesh"],
     [41.890194, 12.492231, "Rome, Italy"],
     [41.008526, 28.980057, "Istanbul, Turkey"]
 ];
-
 for (var i = 0; i < cities.length; i++) {
     marker = new L.marker([cities[i][0],cities[i][1]])
     .bindPopup(cities[i][2])
@@ -115,13 +111,6 @@ function fullExtent() {
     map.setView([cities[0][0], cities[0][1]], 5);
 }
 
-function ames() {
-    map.panTo(new L.LatLng(42.028160, -93.649329));
-}
-
-function anoKamila() {
-    map.panTo(new L.LatLng(41.058699, 23.427364));
-}
 </script>
 </body>
 
