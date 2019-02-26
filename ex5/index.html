@@ -77,6 +77,9 @@
     //Khulna University, Bangladesh [Undergrad Institution]
        function button(){
             map.setView(new L.LatLng(22.802, 89.533), 15);
+            L.marker([22.802, 89.533]).addTo(map)
+            .bindPopup("Khulna University")
+            .openPopup();
         };
         function fullExtent() {
     map.setView([cities[0][0], cities[0][1]], 5);
