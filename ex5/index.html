@@ -34,7 +34,7 @@
         <a class="colored_link" href="../Assignment1/assignment1.html">Assignment 1</a>
     </nav>
     <h1>Exercise 5: Getting Started with Leaflet</h1>
-    <p>
+
     <div id='map'; style="align-content: center;"></div>
     <script>
         var map = L.map('map').setView([22.802, 89.533], 12);
@@ -45,7 +45,47 @@
             .bindPopup("Khulna University")
             .openPopup();
     </script>
-</p>
+
+<br>
+    Pan to <a href="javascript:frasier()">Dhaka, Bangladesh</a><br>
+    <a href="#" id='zoomOut'>Zoom out to level 8</a><br>
+    <button id="ames">Visit Ames, Iowa</button>
+    <script>
+        var map = L.map('map').setView([22.802, 89.533], 10);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        //this will add one marker
+        L.marker([22.802, 89.533]).addTo(map)
+            .bindPopup("Khulna University");
+        //.openPopup();
+        //----------Adding multiple town markers----------
+        //a array list of towns
+        var towns = [
+            [41.590833, -93.620833, "Des Moines, Iowa"],
+            [41.401389, -95.010833, "Atlantic, Iowa"],
+            [22.7, 91.1, "Noakhali, Bangladesh"]
+        ];
+        //loop through the array and add a marker for each
+        for (var i = 0; i < towns.length; i++) {
+            marker = new L.marker([towns[i][0], towns[i][1]])
+                .bindPopup(towns[i][2])
+                .addTo(map);
+        }
+        //----------Links below the Map----------
+        //Pan to Frasier
+        function frasier() {
+            map.panTo(new L.LatLng(23.716111, 90.396111));
+        }
+        //set Zoom
+        $("#zoomOut").click(function() {
+            map.setZoom(8);
+        });
+        //Ames, Iowa
+        $("#ames").click(function() {
+            map.setView(new L.LatLng(42.034722, -93.62), 13);
+        });
+    </script>
 
 
 </body>
