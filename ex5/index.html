@@ -54,7 +54,8 @@
         for (var i = 0; i < towns.length; i++) {
             marker = new L.marker([towns[i][0], towns[i][1]])
                 .bindPopup(towns[i][2])
-                .addTo(map);
+                .addTo(map)
+                .openPopup();
         }
         //----------Links below the Map----------
         //Pan to Dhaka
@@ -77,9 +78,6 @@
     //Khulna University, Bangladesh [Undergrad Institution]
        function button(){
             map.setView(new L.LatLng(22.802, 89.533), 15);
-            L.marker([22.802, 89.533]).addTo(map)
-            .bindPopup("Khulna University")
-            .openPopup();
         };
         function fullExtent() {
     map.setView([cities[0][0], cities[0][1]], 5);
