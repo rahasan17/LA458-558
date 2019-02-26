@@ -48,7 +48,7 @@
 
 <br>
     Pan to <a href="javascript:frasier()">Dhaka, Bangladesh</a><br>
-    <a href="#" id='zoomOut'>Zoom out to level 8</a><br>
+    <a href="#" id='zoomOut'>Zoom out to level 10</a><br>
     <button id="ames">Visit Ames, Iowa</button>
     <script>
         var map = L.map('map').setView([22.802, 89.533], 10);
@@ -58,7 +58,7 @@
         //this will add one marker
         L.marker([22.802, 89.533]).addTo(map)
             .bindPopup("Khulna University");
-        //.openPopup();
+            .openPopup();
         //----------Adding multiple town markers----------
         //a array list of towns
         var towns = [
@@ -79,7 +79,7 @@
         }
         //set Zoom
         $("#zoomOut").click(function() {
-            map.setZoom(8);
+            map.setZoom(10);
         });
         //Ames, Iowa
         $("#ames").click(function() {
