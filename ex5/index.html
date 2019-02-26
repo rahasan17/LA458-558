@@ -41,7 +41,7 @@
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         L.marker([22.802, 89.533]).addTo(map)
-            .bindPopup("My undergrad University")
+            .bindPopup("Khulna University")
             .openPopup();
         //----------Adding multiple town markers----------
         //a array list of towns
@@ -66,17 +66,17 @@
     <a a href="javascript:zoomOut()">Zoom out to see the cities in Bangladesh</a>
     </p>
     <p id="button">
-    <button onclick="button()">Visit The Capital of Bangladesh</button>
+    <button onclick="button()">Visit my Undergrad Institution</button>
     </p> 
     
     <script>
-    //set Zoom
+    //set Zoom to see all the markers
        function zoomOut(){
             map.setZoom(8);
         };
-    //Dhaka, Bangladesh
+    //Khulna University, Bangladesh [Undergrad Institution]
        function button(){
-            map.setView(new L.LatLng(23.716111, 90.396111), 15);
+            map.setView(new L.LatLng(22.802, 89.533), 15);
         };
         function fullExtent() {
     map.setView([cities[0][0], cities[0][1]], 5);
