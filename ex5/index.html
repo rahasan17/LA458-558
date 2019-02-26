@@ -61,18 +61,16 @@
      <p id="zoomOut">
     <a a href="javascript:zoomOut()">Zoom out to level 8</a>
     </p>
-       
- <p id="button">
+    <p id="button">
     <button onclick="button()">Visit Dhaka, Bangladesh</button>
     </p> 
     
     <script>
     //set Zoom
        function zoomOut(){
-            map.setZoom(8);
+            map.setZoom(9);
         };
-        
-        //Dhaka, Bangladesh
+    //Dhaka, Bangladesh
        function button(){
             map.setView(new L.LatLng(23.716111, 90.396111), 15);
         };
