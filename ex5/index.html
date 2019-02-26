@@ -31,6 +31,8 @@
     </nav>
     <h1>Exercise 5: Getting Started with Leaflet</h1>
     <div id='map'; style="align-content: center;"></div>
+    <br>
+    Pan to <a href="javascript:Dhaka()">Dhaka, Bangladesh</a><br>
     <script>
         var map = L.map('map').setView([22.802, 89.533], 12);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -53,8 +55,8 @@
                 .addTo(map);
         }
         //----------Links below the Map----------
-        //Pan to Frasier
-        function frasier() {
+        //Pan to Dhaka
+        function Dhaka() {
             map.panTo(new L.LatLng(23.716111, 90.396111));
         }
     </script>
