@@ -42,9 +42,9 @@
         //----------Adding multiple town markers----------
         //a array list of towns
         var towns = [
-            [41.590833, -93.620833, "Des Moines, Iowa"],
-            [41.401389, -95.010833, "Atlantic, Iowa"],
-            [22.7, 91.1, "Noakhali, Bangladesh"]
+            [24.366667, 88.6, "Rajshahi, Bangladesh"],
+            [23.716111, 90.396111, "The City I Love"],
+            [22.7, 91.1, "My Hometown"]
         ];
         //loop through the array and add a marker for each
         for (var i = 0; i < towns.length; i++) {
@@ -58,10 +58,9 @@
             map.panTo(new L.LatLng(23.716111, 90.396111));
         }
     </script>
-     <p id="zoomOut">
+     <p id="zoomOut"></p>
     <a a href="javascript:zoomOut()">Zoom out to level 8</a><br>
-    </p>
-      
+       
  <p id="button">
     <button onclick="button()">Visit Dhaka, Bangladesh</button>
     </p> 
