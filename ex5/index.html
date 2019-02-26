@@ -6,7 +6,6 @@
     <title> Ex5: Getting Started with Leaflet </title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <style>
         #map {
             align-content: center;
@@ -14,12 +13,9 @@
             height: 600px;
             background-color: Red;
         }
-        
          h1,h2 {color: Black; text-align: center; background: none; font-size: 28px; font-family: Calibri;}
          p { color:Black; margin-left: 15%; margin-right: 15%; text-align: center; font-size: 20px; font-family: Calibri; }
     </style>
-
-
 </head>
 
 <body>
@@ -34,7 +30,6 @@
         <a class="colored_link" href="../Assignment1/assignment1.html">Assignment 1</a>
     </nav>
     <h1>Exercise 5: Getting Started with Leaflet</h1>
-
     <div id='map'; style="align-content: center;"></div>
     <script>
         var map = L.map('map').setView([22.802, 89.533], 12);
@@ -42,21 +37,7 @@
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         L.marker([22.802, 89.533]).addTo(map)
-            .bindPopup("Khulna University")
-            .openPopup();
-    </script>
-    <br>
-    Pan to <a href="javascript:frasier()">Dhaka, Bangladesh</a><br>
-    <a href="#" id='zoomOut'>Zoom out to level 10</a><br>
-    <button id="ames">Visit Ames, Iowa</button>
-    <script>
-        var map = L.map('map').setView([22.802, 89.533], 10);
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        //this will add one marker
-        L.marker([22.802, 89.533]).addTo(map)
-            .bindPopup("Khulna University");
+            .bindPopup("My undergrad University")
             .openPopup();
         //----------Adding multiple town markers----------
         //a array list of towns
@@ -76,42 +57,31 @@
         function frasier() {
             map.panTo(new L.LatLng(23.716111, 90.396111));
         }
-        //set Zoom
-        $("#zoomOut").click(function() {
-            map.setZoom(10);
-        });
-        //Ames, Iowa
-        $("#ames").click(function() {
-            map.setView(new L.LatLng(42.034722, -93.62), 13);
-        });
     </script>
+     <p id="zoomOut">
+    <a a href="javascript:zoomOut()">Zoom out to level 8</a><br>
+    </p>
+      
+ <p id="button">
+    <button onclick="button()">Visit Dhaka, Bangladesh</button>
+    </p> 
+    
     <script>
-        var map = L.map('map').setView([22.802, 89.533], 10);
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        L.marker([22.802, 89.533]).addTo(map)
-        .bindPopup("The City I Love")
-        .openPopup();
-
-var cities = [
-    [41.590833, -93.620833, "Des Moines, Iowa"],
-    [41.401389, -95.010833, "Atlantic, Iowa"],
-    [22.7, 91.1, "Noakhali, Bangladesh"],
-    [41.890194, 12.492231, "Rome, Italy"],
-    [41.008526, 28.980057, "Istanbul, Turkey"]
-];
-for (var i = 0; i < cities.length; i++) {
-    marker = new L.marker([cities[i][0],cities[i][1]])
-    .bindPopup(cities[i][2])
-    .addTo(map);
-}
-
-function fullExtent() {
+    //set Zoom
+       function zoomOut(){
+            map.setZoom(8);
+        };
+        
+        //Dhaka, Bangladesh
+       function button(){
+            map.setView(new L.LatLng(23.716111, 90.396111), 15);
+        };
+        function fullExtent() {
     map.setView([cities[0][0], cities[0][1]], 5);
 }
+    </script>
 
-</script>
+    
 </body>
 
 </html>
