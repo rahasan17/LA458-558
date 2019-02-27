@@ -55,5 +55,5 @@ var cirmarker1 = L.circleMarker([42.026119, -93.649923], {fillOpacity   : 1, fil
 var cirmarker2 = L.circleMarker([42.026374, -93.648483], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 7}).addTo(map);
 var cirmarker3 = L.circleMarker([42.024893, -93.646165], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 7}).addTo(map);
 var cirmarker4 = L.circleMarker([42.027871, -93.651719], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 7}).addTo(map);
-var rectangle = L.rectangle([[42.028696, -93.649327],[42.027588, -93.648204]], {color: "#ff7800", weight: 1}).addTo(map);
+var rectangle = L.rectangle([[42.028696, -93.649327],[42.027588, -93.648204]], {color: "#CE110B", weight: 1}).addTo(map);
 rectangle.bindPopup('<b>Parks Library</b>')
