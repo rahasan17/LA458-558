@@ -41,7 +41,7 @@
             .bindPopup("Durham Center")
             .openPopup();
         </script>
-    //<?code for the requirements of exercise 6!// 
+
 <script type="text/javascript">
     var map = L.map('map', {minZoom:15}).setView([42.027784, -93.649862], 16);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -75,7 +75,6 @@ var coordinates = [
 
 var polyline = L.polyline(coordinates, {color: 'maroon', opacity:0.90}).addTo(map);
 polyline.bindTooltip("Home to Office");
-
 var circle1 = L.circle([42.041484, -93.640635], {radius: 100, color: '#dd1c77', weight: 0}).addTo(map);
 var circle2 = L.circle([42.027784, -93.649862], {radius: 100, color: '#dd1c77', weight: 0}).addTo(map);
 
@@ -107,10 +106,7 @@ var cirmarker3 = L.circleMarker([42.029396, -93.648633], {fillOpacity   : 1, fil
 var rectangle = L.rectangle([[42.028696, -93.649327],[42.027588, -93.648204]], {color: "#ff7800", weight: 1}).addTo(map);
 
 rectangle.bindPopup('<b>Parks Library</b>')
-        </script>
-
-
-
+</script>
 
 
 
