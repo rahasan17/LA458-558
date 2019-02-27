@@ -33,8 +33,8 @@ var circle1 = L.circle([42.028674, -93.652924], {radius: 100, color: '#dd1c77', 
 var circle2 = L.circle([42.027784, -93.649862], {radius: 100, color: '#dd1c77', weight: 0}).addTo(map);
 
 var myPoints = [
-    [42.028674, -93.652924, "cod", "College of Design"],
-    [42.027525, -93.650120, "office", "Durham Center"],
+    [42.028537, -93.653180, "cod", "College of Design"],
+    [42.027766, -93.649870, "office", "Durham Center"],
     [42.027323, -93.648476, "cafe", "Heaping Plato"]
     ];
 
