@@ -29,8 +29,8 @@ var coordinates = [
 
 var polyline = L.polyline(coordinates, {color: 'maroon', opacity:0.90}).addTo(map);
 polyline.bindTooltip("Class to Office");
-var circle1 = L.circle([42.028537, -93.653180], {radius: 100, color: '#dd1c77', weight: 1}).addTo(map);
-var circle2 = L.circle([42.027766, -93.649870], {radius: 100, color: '#dd1c77', weight: 1}).addTo(map);
+var circle1 = L.circle([42.028537, -93.653180], {radius: 50, color: '#dd1c77', weight: 1}).addTo(map);
+var circle2 = L.circle([42.027766, -93.649870], {radius: 50, color: '#dd1c77', weight: 1}).addTo(map);
 
 var myPoints = [
     [42.028537, -93.653180, "cod", "College of Design"],
