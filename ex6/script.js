@@ -29,8 +29,8 @@ var coordinates = [
 
 var polyline = L.polyline(coordinates, {color: 'maroon', opacity:0.90}).addTo(map);
 polyline.bindTooltip("Class to Office");
-var circle1 = L.circle([42.028674, -93.652924], {radius: 100, color: '#dd1c77', weight: 0}).addTo(map);
-var circle2 = L.circle([42.027784, -93.649862], {radius: 100, color: '#dd1c77', weight: 0}).addTo(map);
+var circle1 = L.circle([42.028537, -93.653180], {radius: 100, color: '#dd1c77', weight: 1}).addTo(map);
+var circle2 = L.circle([42.027766, -93.649870], {radius: 100, color: '#dd1c77', weight: 1}).addTo(map);
 
 var myPoints = [
     [42.028537, -93.653180, "cod", "College of Design"],
@@ -51,9 +51,9 @@ for (var i = 0; i < myPoints.length; i++) {
     }).bindPopup('<b>'+myPoints[i][3]+'</b>').addTo(map);
 }
 
-var cirmarker1 = L.circleMarker([42.026119, -93.649923], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 5}).addTo(map);
-var cirmarker2 = L.circleMarker([42.026374, -93.648483], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 5}).addTo(map);
-var cirmarker3 = L.circleMarker([42.024893, -93.646165], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 5}).addTo(map);
-var cirmarker4 = L.circleMarker([42.027871, -93.651719], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 5}).addTo(map);
+var cirmarker1 = L.circleMarker([42.026119, -93.649923], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 7}).addTo(map);
+var cirmarker2 = L.circleMarker([42.026374, -93.648483], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 7}).addTo(map);
+var cirmarker3 = L.circleMarker([42.024893, -93.646165], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 7}).addTo(map);
+var cirmarker4 = L.circleMarker([42.027871, -93.651719], {fillOpacity   : 1, fillColor: "#1B27CE", weight: 0, radius: 7}).addTo(map);
 var rectangle = L.rectangle([[42.028696, -93.649327],[42.027588, -93.648204]], {color: "#ff7800", weight: 1}).addTo(map);
 rectangle.bindPopup('<b>Parks Library</b>')
