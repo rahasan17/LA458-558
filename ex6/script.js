@@ -1,8 +1,7 @@
 var map = L.map('map', {minZoom:15}).setView([[42.041484, -93.640635],[42.027784, -93.649862]], 16);
-
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
 var coordinates = [
     [42.041484, -93.640635],
@@ -31,7 +30,7 @@ var coordinates = [
 
 var polyline = L.polyline(coordinates, {color: 'maroon', opacity:0.90}).addTo(map);
 polyline.bindTooltip("Home to Office");
-var circle1 = L.circle([42.041484, -93.640635], {radius: 100, color: '#dd1c77', weight: 0}).addTo(map);
+var circle1 = L.circle([42.028674, -93.652924], {radius: 100, color: '#dd1c77', weight: 0}).addTo(map);
 var circle2 = L.circle([42.027784, -93.649862], {radius: 100, color: '#dd1c77', weight: 0}).addTo(map);
 
 var myPoints = [
@@ -53,11 +52,9 @@ for (var i = 0; i < myPoints.length; i++) {
     }).bindPopup('<b>'+myPoints[i][3]+'</b>').addTo(map);
 }
 
-var cirmarker1 = L.circleMarker([42.028592, -93.646500], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
-
-var cirmarker2 = L.circleMarker([42.027896, -93.645184], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
-
-var cirmarker3 = L.circleMarker([42.029396, -93.648633], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
+var cirmarker1 = L.circleMarker([42.026119, -93.649923], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
+var cirmarker2 = L.circleMarker([42.026374, -93.648483], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
+var cirmarker3 = L.circleMarker([42.024893, -93.646165], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
 
 var rectangle = L.rectangle([[42.028696, -93.649327],[42.027588, -93.648204]], {color: "#ff7800", weight: 1}).addTo(map);
 
