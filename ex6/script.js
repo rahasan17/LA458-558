@@ -5,7 +5,6 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 
 var coordinates = [
     [42.041484, -93.640635],
-    [42.041651, -93.641000],
     [42.041536, -93.640861],
     [42.040787, -93.641016],
     [42.040787, -93.641016],
@@ -55,5 +54,6 @@ for (var i = 0; i < myPoints.length; i++) {
 var cirmarker1 = L.circleMarker([42.026119, -93.649923], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
 var cirmarker2 = L.circleMarker([42.026374, -93.648483], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
 var cirmarker3 = L.circleMarker([42.024893, -93.646165], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
+var cirmarker4 = L.circleMarker([42.024893, -93.646165], {fillOpacity   : 1, fillColor: "#762a83", weight: 0, radius: 5}).addTo(map);
 var rectangle = L.rectangle([[42.028696, -93.649327],[42.027588, -93.648204]], {color: "#ff7800", weight: 1}).addTo(map);
 rectangle.bindPopup('<b>Parks Library</b>')
