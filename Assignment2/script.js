@@ -1,5 +1,3 @@
-var marker;
-
 var map = L.map('map').setView([22.803558, 89.532428], 14);
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -7,15 +5,12 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
-
-
-
 function onMapClick (e){
-var marker=L.marker(e.latlng,{
- draggable: true,
- title : "ISU",
- alt : "Ames,Iowa",
- riseOnHover: true
+  var marker=L.marker(e.latlng,{
+    draggable: true,
+    title : "ISU",
+    alt : "Ames,Iowa",
+    riseOnHover: true
 }).addTo(map).bindPopup(e.latlng.toString()).openPopup();
 
 marker.on("dragend", function (ev){
@@ -33,7 +28,6 @@ $(document).ready(function(){
 $('#Dhaka').click(function() {
 map.setView([23.817682, 90.411790],10 );
 });
-
 
 $('#Khulna').click(function() {
 map.setView([22.803558, 89.532428],13 );
