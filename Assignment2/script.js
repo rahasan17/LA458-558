@@ -33,7 +33,7 @@ var marker4 = L.marker([23.814854, 90.411102], {
     opacity:1
 }).addTo(map).bindPopup('<a href="https://en.wikipedia.org/wiki/Dhaka"> DHAKA CITY </a>').openPopup();
 
-var marker3 = L.marker([23.815802, 90.393587], {
+var marker5= L.marker([23.815802, 90.393587], {
     draggable: true,
     opacity: 0
 }).addTo(map).bindPopup("By CLickikng the link on the beside marker you will find information on the city i Live in ").openPopup();
