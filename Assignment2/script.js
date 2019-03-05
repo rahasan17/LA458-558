@@ -70,10 +70,10 @@ $('#theZoom').html(x);
 //adding a few random points in the map
 $$('#randomMarker').click(function() {
 var markers=L.featureGroup();
-var maxY=23.9;
-var minY=23;
-var maxX=90.75;
-var minX=90.1;
+var maxY=23;
+var minY=22;
+var maxX=91;
+var minX=90;
 var markerArray=[];
 var marker=L.marker();
 for (var i=0 ;i<10 ; i++){
@@ -86,3 +86,4 @@ map.fitBounds(group.getBounds());
 
 }); 
 });
+
