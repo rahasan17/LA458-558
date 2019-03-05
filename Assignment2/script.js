@@ -48,6 +48,25 @@ var marker3 = L.marker([22.803607, 89.534197], {
 }).addTo(map).bindPopup("By CLickikng the links on the beside marker you will find information on my Undergrad University").openPopup();
 });
 
+//adding few important location points of my undergrad life and google map markers to show them
+var myPoints = [
+    [22.802731, 89.534758, "set", "Academic Building 1"],
+    [22.802276, 89.537611, "dorm", "Khan Bahadur Ahsanullal Hall"],
+    [22.801845, 89.534559, "cafe", "Central Cafe"]
+    ];
+
+function getColor(s) {
+    return  s == "set" ? 'http://www.googlemapsmarkers.com/v1/e41a1c' :
+            s == "dorm" ? 'http://www.googlemapsmarkers.com/v1/377eb8' :
+            s == "cafe" ? 'http://www.googlemapsmarkers.com/v1/4daf4a' :
+            'http://www.googlemapsmarkers.com/v1/FFFFFF';
+}
+
+for (var i = 0; i < myPoints.length; i++) {
+    marker = new L.marker([myPoints[i][0],myPoints[i][1]], {
+        icon: L.icon({iconUrl: getColor(myPoints[i][2]),iconSize:[10, 17],iconAnchor:[5, 17],popupAnchor:[0, -20]}), title: myPoints[i][3], opacity: 1.0
+    }).bindPopup('<b>'+myPoints[i][3]+'</b>').addTo(map);
+}
 
 $('#getzoom').click(function() {
 
@@ -55,7 +74,7 @@ x=map.getZoom();
 $('#theZoom').html(x);
 });
 
-
+//adding a few random points in the map
 $('#randomMarker').click(function() {
 
 var markers=L.featureGroup();
