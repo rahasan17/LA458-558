@@ -88,7 +88,4 @@ map.fitBounds(group.getBounds());
 }); 
 });
 
-$("#Khulna").click(function() {
-  myMarker.openPopup();
-});
 
