@@ -25,19 +25,6 @@ map.on('click',onMapClick);
 
 
 $(document).ready(function(){
-$('#Dhaka').click(function() {
-map.setView([23.814854, 90.411102],10 );
-});
-var marker4 = L.marker([23.814854, 90.411102], {
-    draggable: true,
-    opacity:1
-}).addTo(map).bindPopup('<a href="https://en.wikipedia.org/wiki/Dhaka"> DHAKA CITY </a>').openPopup();
-
-var marker5= L.marker([23.815802, 90.393587], {
-    draggable: true,
-    opacity: 0
-}).addTo(map).bindPopup("By CLickikng the link on the beside marker you will find information on the city i Live in ").openPopup();
-});
 $('#Khulna').click(function() {
 map.setView([22.803558, 89.532428],13 );
 var marker2 = L.marker([22.803558, 89.532428]).addTo(map)
@@ -45,9 +32,15 @@ var marker2 = L.marker([22.803558, 89.532428]).addTo(map)
 var marker3 = L.marker([22.803607, 89.534197], {
     draggable: true,
     opacity: 0
-}).addTo(map).bindPopup("By CLickikng the links on the beside marker you will find information on my Undergrad University").openPopup();
+}).addTo(map).bindPopup("Let's find something about my Undergrad University").openPopup();
 });
-
+$('#Dhaka').click(function() {
+map.setView([23.814854, 90.411102],10 );
+});
+var marker4 = L.marker([23.814854, 90.411102], {
+    draggable: true,
+    opacity:1
+}).addTo(map).bindPopup('<a href="https://en.wikipedia.org/wiki/Dhaka"> DHAKA CITY </a>').openPopup();
 //adding few important location points of my undergrad life and google map markers to show them
 var myPoints = [
     [22.802731, 89.534758, "set", "Academic Building 1"],
