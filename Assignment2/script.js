@@ -78,10 +78,10 @@ $('#theZoom').html(x);
 $('#randomMarker').click(function() {
 
 var markers=L.featureGroup();
-var maxY=89.7;
-var minY=89.5;
-var maxX=22.9;
-var minX=22.5;
+var maxY=89.55;
+var minY=89.35;
+var maxX=22.82;
+var minX=22.70;
 var markerArray=[];
 var marker=L.marker();
 
