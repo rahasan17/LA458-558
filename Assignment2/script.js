@@ -39,7 +39,7 @@ var marker2 = L.marker([22.803558, 89.532428]).addTo(map)
 var marker3 = L.marker([22.803607, 89.534197], {
     draggable: true,
     opacity: 0
-}).addTo(map).bindPopup("Let's find something about my Undergrad University").openPopup();
+}).addTo(map).bindPopup("Let's find something about my Undergrad University by clicking on the marker").openPopup();
 });
 
 //adding few important location points of my undergrad life and google map markers to show them
