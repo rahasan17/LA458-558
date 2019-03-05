@@ -73,22 +73,3 @@ var group =L.featureGroup(markerArray).addTo(map);
 map.fitBounds(group.getBounds());
 
 });
-
-var myPoints = [
-    [22.802752, 89.534825, "school", "Science, Engineering and Technology (SET) school"],
-    [22.802284, 89.537847, "dorm", "Khan Bahadur Ahsanullah Hall"],
-    [22.802756, 89.536097, "monument", "Kotka Monument"]
-    ];
-
-function getColor(s) {
-    return  s == "school" ? 'http://www.googlemapsmarkers.com/v1/e41a1c' :
-            s == "dorm" ? 'http://www.googlemapsmarkers.com/v1/377eb8' :
-            s == "monument" ? 'http://www.googlemapsmarkers.com/v1/4daf4a' :
-            'http://www.googlemapsmarkers.com/v1/FFFFFF';
-}
-
-for (var i = 0; i < myPoints.length; i++) {
-    marker = new L.marker([myPoints[i][0],myPoints[i][1]], {
-        icon: L.icon({iconUrl: getColor(myPoints[i][2]),iconSize:[10, 17],iconAnchor:[5, 17],popupAnchor:[0, -20]}), title: myPoints[i][3], opacity: 1.0
-    }).bindPopup('<b>'+myPoints[i][3]+'</b>').addTo(map);
-}
