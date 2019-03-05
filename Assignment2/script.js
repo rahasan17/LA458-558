@@ -1,15 +1,15 @@
-var map = L.map('map').setView([22.803558, 89.532428], 14);
 
+var marker;
+var map = L.map('map', {minZoom:15}).setView([22.803558, 89.532428], 16);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-
 
 function onMapClick (e){
   var marker=L.marker(e.latlng,{
     draggable: true,
-    title : "ISU",
-    alt : "Ames,Iowa",
+    title : "KU",
+    alt : "Khulna University",
     riseOnHover: true
 }).addTo(map).bindPopup(e.latlng.toString()).openPopup();
 
