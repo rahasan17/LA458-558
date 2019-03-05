@@ -26,14 +26,14 @@ map.on('click',onMapClick);
 
 $(document).ready(function(){
 $('#Dhaka').click(function() {
-map.setView([23.817682, 90.411790],10 );
+map.setView([23.814854, 90.411102],10 );
 });
-var marker4 = L.marker([23.817682, 90.411790], {
+var marker4 = L.marker([23.814854, 90.411102], {
     draggable: true,
     opacity:1
 }).addTo(map).bindPopup('<a href="https://en.wikipedia.org/wiki/Dhaka"> DHAKA CITY </a>').openPopup();
 
-var marker5 = L.marker([23.817682, 90.411790], {
+var marker5 = L.marker([23.815802, 90.393587], {
     draggable: true,
     opacity: 0
 }).addTo(map).bindPopup("By CLickikng the link on the beside marker you will find information on the city i Live in ").openPopup();
