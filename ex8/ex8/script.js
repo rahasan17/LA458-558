@@ -23,7 +23,7 @@ var baseMaps = {
 
 L.control.layers(baseMaps).addTo(map);
 
-var myURL = "https://rahasan17.github.io/LA458-558/ex8/map.json";
+var myURL = "https://rahasan17.github.io/LA458-558/ex8/maps.geojson";
 
 var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 	 pointToLayer: function (feature, latlng) {
