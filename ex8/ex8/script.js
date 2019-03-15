@@ -34,7 +34,7 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
             opacity: 1.0, //stoke opacity
 			fillColor: 'DarkSlateGray',
             fillOpacity: 0.85,
-            radius: 10,
+            radius: feature.properties.rank+2,
            //title: this is not supported here - see layer.bindTooltip  below
         });
     },
@@ -42,7 +42,7 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
     onEachFeature: function (feature, layer) {
         htmlText = "<strong>" + feature.properties.name + "</strong>";
         layer.bindPopup(htmlText);
-        textForTooltip = feature.properties.name+"is"+feature.properties.type;
+        textForTooltip = feature.properties.name+"is"+feature.properties.type+"with a ranking point of"+feature.properties.rank;
         layer.bindTooltip(textForTooltip);
     }
 }).addTo(map);
