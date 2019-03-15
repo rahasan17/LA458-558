@@ -32,7 +32,7 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
             weight: 2, //stroke weight
             color: '#000000', //stroke color
             opacity: 1.0, //stoke opacity
-			fillColor: 'red',
+			fillColor: 'Blue',
             fillOpacity: 0.85,
             radius: 10,
            //title: this is not supported here - see layer.bindTooltip  below
