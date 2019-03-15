@@ -42,7 +42,7 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
     onEachFeature: function (feature, layer) {
         htmlText = "<strong>" + feature.properties.name + "</strong>";
         layer.bindPopup(htmlText);
-        textForTooltip = feature.properties.name+ "is" +feature.properties.type+ "with a ranking point of" +feature.properties.rank;
+        textForTooltip = feature.properties.name+ " is " + feature.properties.type + " with a ranking point of " + feature.properties.rank;
         layer.bindTooltip(textForTooltip);
     }
 }).addTo(map);
