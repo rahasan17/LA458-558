@@ -51,10 +51,10 @@ var legend = L.control({position: 'bottomleft'});
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     // loop through items and generate legend items each
-    for (var i = 0; i < feature.properties.rank.length; i++) {
+    for (var i = 0; i < feature.properties.type.length; i++) {
         div.innerHTML +=
-            '<i style="background:' + getColor(feature.properties.rank[i]) + ' "></i> ' +
-            labels[i] + (feature.properties.rank ? '' +  '<br>' : '');
+            '<i style="background:' + getColor(feature.properties.type[i]) + ' "></i> ' +
+            labels[i] + (feature.properties.type ? '' +  '<br>' : '');
     }
     return div;
 };
