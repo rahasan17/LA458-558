@@ -27,7 +27,7 @@ var myURL = "https://rahasan17.github.io/LA458-558/ex8/ex8/maps.geojson";
 
 var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 	 pointToLayer: function (feature, latlng) {
-        return new L.Marker(latlng, {
+        return new L.circleMarker(latlng, {
             stroke: false,
             weight: 0.25, //stroke weight
             color: '#000000', //stroke color
