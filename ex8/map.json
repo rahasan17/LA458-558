@@ -4,21 +4,6 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#004080",
-        "marker-size": "medium",
-        "marker-symbol": "circle"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -88.0224609375,
-          44.49650533109348
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "marker-color": "#ffff00",
         "marker-size": "medium",
         "marker-symbol": "circle"
