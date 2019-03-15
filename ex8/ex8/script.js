@@ -28,11 +28,11 @@ var myURL = "https://rahasan17.github.io/LA458-558/ex8/ex8/maps.geojson";
 var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 	 pointToLayer: function (feature, latlng) {
         return new L.CircleMarker(latlng, {
-            stroke: true,
-            weight: 2, //stroke weight
+            stroke: false,
+            weight: 0.25, //stroke weight
             color: '#000000', //stroke color
             opacity: 1.0, //stoke opacity
-			fillColor: 'Blue',
+			fillColor: 'lightBlue',
             fillOpacity: 0.85,
             radius: 10,
            //title: this is not supported here - see layer.bindTooltip  below
