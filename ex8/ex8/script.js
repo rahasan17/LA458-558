@@ -49,6 +49,12 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 
 var breaks = [3, 5, 8,]; 
 var labels = ['Top Priority', 'Moderate', 'Below Moderate'];
+function getColor(d) {
+    return  d == '3' ? "#a1dab4" :
+    d == '5' ? "#2c7fb8" :
+    d == '8' ? "#41b6c4":
+    "#FFFFFF";
+}
 
 
 var legend = L.control({position: 'bottomright'});
