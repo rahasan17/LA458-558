@@ -24,12 +24,13 @@ var baseMaps = {
 L.control.layers(baseMaps).addTo(map);
 
 var myURL = "https://rahasan17.github.io/LA458-558/ex8/ex8/maps.geojson";
+
 function style(feature) {
     return {
         stroke: false,
         fillColor: ((feature.properties.rank == 3) ? '#a1dab4' : 
             (feature.properties.rank == 5) ? '#2c7fb8' :
-            (feature.properties.rank == 8) ? '#41b6c4': '#d73027'),
+            (feature.properties.rank == 8) ? '#41b6c4'),
         weight: 0
     };
 }
@@ -37,7 +38,7 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 	 pointToLayer: function (feature, latlng) {
         return new L.circleMarker(latlng, {
             fillOpacity: 0.85,
-            radius: feature.properties.rank+2,
+            radius: feature.properties.rank+5,
            //title: this is not supported here - see layer.bindTooltip  below
         });
     },
@@ -52,13 +53,6 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 
 var breaks = [3, 5, 8,]; 
 var labels = ['Top Priority', 'Moderate', 'Below Moderate'];
-function getColor(d) {
-    return  d == '3' ? "#a1dab4" :
-    d == '5' ? "#2c7fb8" :
-    d == '8' ? "#41b6c4":
-    "#FFFFFF";
-}
-
 
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
