@@ -24,15 +24,18 @@ var baseMaps = {
 L.control.layers(baseMaps).addTo(map);
 
 var myURL = "https://rahasan17.github.io/LA458-558/ex8/ex8/maps.geojson";
-
+function style(feature) {
+    return {
+        stroke: false,
+        fillColor: ((feature.properties.rank == 3) ? '##a1dab4' : 
+            (feature.properties.rank == 5) ? '#2c7fb8' :
+            (feature.properties.rank == 8) ? '#41b6c4': '#d73027'),
+        weight: 0
+    };
+}
 var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 	 pointToLayer: function (feature, latlng) {
         return new L.circleMarker(latlng, {
-            stroke: false,
-            weight: 0.25, //stroke weight
-            color: '#000000', //stroke color
-            opacity: 1.0, //stoke opacity
-			fillColor: 'DarkSlateGray',
             fillOpacity: 0.85,
             radius: feature.properties.rank+2,
            //title: this is not supported here - see layer.bindTooltip  below
