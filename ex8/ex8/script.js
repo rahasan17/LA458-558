@@ -46,3 +46,16 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
         layer.bindTooltip(textForTooltip);
     }
 }).addTo(map);
+
+var legend = L.control({position: 'bottomleft'});
+legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info legend');
+    // loop through items and generate legend items each
+    for (var i = 0; i < feature.properties.rank.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(feature.properties.rank[i]) + ' "></i> ' +
+            labels[i] + (feature.properties.rank ? '' +  '<br>' : '');
+    }
+    return div;
+};
+legend.addTo(map);
