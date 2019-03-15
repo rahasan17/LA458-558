@@ -8,7 +8,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Top Priority",
-        "name": "Georgia"
+        "name": "Georgia",
+        "rank": 8
       },
       "geometry": {
         "type": "Point",
@@ -31,7 +32,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Below Moderate",
-        "name": "Massachusetts"
+        "name": "Massachusetts",
+        "rank": 8
       },
       "geometry": {
         "type": "Point",
@@ -54,7 +56,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Moderate",
-        "name": "Houston"
+        "name": "Houston",
+        "rank": 3
       },
       "geometry": {
         "type": "Point",
@@ -77,7 +80,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Moderate",
-        "name": "Texas"
+        "name": "Texas",
+        "rank": 3
       },
       "geometry": {
         "type": "Point",
@@ -100,7 +104,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle-stroked",
         "type": "Moderate",
-        "name": "Texas"
+        "name": "Texas",
+        "rank": 3
       },
       "geometry": {
         "type": "Point",
@@ -123,7 +128,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Top Priority",
-        "name": "California"
+        "name": "California",
+        "rank": 8
       },
       "geometry": {
         "type": "Point",
@@ -146,7 +152,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Top Priority",
-        "name": "Florida"
+        "name": "Florida",
+        "rank": 8
       },
       "geometry": {
         "type": "Point",
@@ -169,7 +176,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Below Moderate",
-        "name": "Colorado"
+        "name": "Colorado",
+        "rank": 5
       },
       "geometry": {
         "type": "Point",
@@ -192,7 +200,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Below Moderate",
-        "name": "North Carolina"
+        "name": "North Carolina",
+        "rank": 5
       },
       "geometry": {
         "type": "Point",
@@ -215,7 +224,8 @@
         "marker-size": "medium",
         "marker-symbol": "circle-stroked",
         "type": "Moderate",
-        "name": "Ohio"
+        "name": "Ohio",
+        "rank": 3
       },
       "geometry": {
         "type": "Point",
