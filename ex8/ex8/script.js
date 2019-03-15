@@ -34,6 +34,7 @@ function style(feature) {
     };
 }
 var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
+    style: style,
 	 pointToLayer: function (feature, latlng) {
         return new L.circleMarker(latlng, {
             fillOpacity: 0.85,
