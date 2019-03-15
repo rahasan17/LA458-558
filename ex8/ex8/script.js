@@ -47,14 +47,18 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
     }
 }).addTo(map);
 
+var breaks = [3, 5, 8,]; 
+var labels = ['Top Priority', 'Moderate', 'Below Moderate'];
+
+
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     // loop through items and generate legend items each
-    for (var i = 0; i > feature.properties.rank.length; i++) {
+    for (var i = 0; i < breaks.length; i++) {
         div.innerHTML +=
-            '<i style="background:' + getColor(feature.properties.rank[i]) + ' "></i> ' +
-            labels[i] + (feature.properties.rank ? '' +  '<br>' : '');
+            '<i style="background:' + getColor(breaks[i]) + ' "></i> ' +
+            labels[i] + (breaks ? '' +  '<br>' : '');
     }
     return div;
 };
