@@ -40,8 +40,8 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
     },
 
     onEachFeature: function (feature, layer) {
-        htmlText = "<strong>" + feature.properties.name + "</strong><br><img src='http://129.186.142.145/teachingGIS/webgis/cyStatues/" + feature.properties.photos + ".jpg' alt='Smiley face' height='266' width='200'>";
+        htmlText = "<strong>" + feature.properties.type + "</strong><br><img src='http://129.186.142.145/teachingGIS/webgis/cyStatues/" + feature.properties.photos + ".jpg' alt='Smiley face' height='266' width='200'>";
         layer.bindPopup(htmlText);
-		layer.bindTooltip(feature.properties.name);
+		layer.bindTooltip(feature.properties.type);
     }
 }).addTo(map);
