@@ -7,7 +7,8 @@
         "marker-color": "#ffff00",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Top Priority"
+        "type": "Top Priority",
+        "name": "Georgia"
       },
       "geometry": {
         "type": "Point",
@@ -29,7 +30,8 @@
         "marker-color": "#ea1333",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Below Moderate"
+        "type": "Below Moderate",
+        "name": "Massachusetts"
       },
       "geometry": {
         "type": "Point",
@@ -51,7 +53,8 @@
         "marker-color": "#800040",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Moderate"
+        "type": "Moderate",
+        "name": "Houston"
       },
       "geometry": {
         "type": "Point",
@@ -73,7 +76,8 @@
         "marker-color": "#800040",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Moderate"
+        "type": "Moderate",
+        "name": "Texas"
       },
       "geometry": {
         "type": "Point",
@@ -95,7 +99,8 @@
         "marker-color": "#800040",
         "marker-size": "medium",
         "marker-symbol": "circle-stroked",
-        "type": "Moderate"
+        "type": "Moderate",
+        "name": "Texas"
       },
       "geometry": {
         "type": "Point",
@@ -117,7 +122,8 @@
         "marker-color": "#ffff00",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Top Priority"
+        "type": "Top Priority",
+        "name": "California"
       },
       "geometry": {
         "type": "Point",
@@ -139,7 +145,8 @@
         "marker-color": "#ffff00",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Top Priority"
+        "type": "Top Priority",
+        "name": "Florida"
       },
       "geometry": {
         "type": "Point",
@@ -161,7 +168,8 @@
         "marker-color": "#ff0000",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Below Moderate"
+        "type": "Below Moderate",
+        "name": "Colorado"
       },
       "geometry": {
         "type": "Point",
@@ -183,7 +191,8 @@
         "marker-color": "#ff0000",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Below Moderate"
+        "type": "Below Moderate",
+        "name": "North Carolina"
       },
       "geometry": {
         "type": "Point",
@@ -205,7 +214,8 @@
         "marker-color": "#800040",
         "marker-size": "medium",
         "marker-symbol": "circle-stroked",
-        "type": "Moderate"
+        "type": "Moderate",
+        "name": "Ohio"
       },
       "geometry": {
         "type": "Point",
