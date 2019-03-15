@@ -38,7 +38,7 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 	 pointToLayer: function (feature, latlng) {
         return new L.circleMarker(latlng, {
             fillOpacity: 0.85,
-            radius: feature.properties.rank+5,
+            radius: feature.properties.rank+7,
            //title: this is not supported here - see layer.bindTooltip  below
         });
     },
