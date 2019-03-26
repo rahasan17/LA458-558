@@ -56,7 +56,7 @@ Highcharts.chart('container', {
 
     tooltip: {
         headerFormat: '',
-        pointFormat: 'The population density of <b> {point.name}</b> is <b>{point.value}</b>'
+        pointFormat: 'The population density of <b> {point.name}</b> is <b>{point.value} per sq. mile.</b>'
     },
 
     plotOptions: {
