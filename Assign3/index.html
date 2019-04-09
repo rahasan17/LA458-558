@@ -138,9 +138,9 @@
            window.onload = changeImg;
         </script> 
           <br><br> 
-            
+
 </script>
-       
+     
   <h3> HighMap showing Population Density in US States. </h3>         
           <p>
           Now let's see the US states and how densely populated these states are. 
@@ -599,7 +599,7 @@ Highcharts.chart('container', {
       
   <script>
 console.clear();
-//Assign 3: layer Control: at least 2 base map, 2 overlays
+// Setting the layer Control: [At least 2 base map, 2 overlays]
       //Base Layers
 var OSM = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
@@ -674,7 +674,7 @@ var map = L.map('map', {
   
     L.control.layers(baseMaps, overlayMaps).addTo(map);
       
-//Geojson map: Priority --- Assign3: 1 external Geojson
+//Geojson map: Priority ---  [1 external Geojson]
  
     var myPoints = [
         [3 ,41.3, -124, "Redwood National Park"],
@@ -693,7 +693,7 @@ var map = L.map('map', {
   //Priority Setting
 var breaks = [3, 6, 9,]; 
 var labels = ['Low Priority', 'Medium Priority', 'High Priority'];
-   //set color of marker function
+   //Setting the color of th marker based on Priority
 function getColor(d) {
     return  d == '3' ? "#3ACE2A" :
     d == '6' ? "#312CCE" :
@@ -713,6 +713,7 @@ for (var i = 0; i < myPoints.length; i++) {
 .bindPopup(myPoints[i][3]) //note there is no comma here
 .addTo(map);
 }
+//Setting the legend based on the color and priority
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
