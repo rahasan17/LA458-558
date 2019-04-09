@@ -29,10 +29,10 @@
 
 }
 #container {
-	background-color: Floralwhite;
-	width: 1000px;
-	margin-right: auto;
-	margin-left: auto;
+    background-color: Floralwhite;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
    border-style: solid;
    border-width: 5px;
 
@@ -42,6 +42,7 @@
     <h1>CRP 558 WEB MAPPING/GIS <br> Assignment 3: Leaflet and JavaScript Project </h1>
 </header>
 <body>
+  <br>
   <nav style="color: Beige">
         <a href="..">Home</a>&nbsp;&nbsp;
         <a href="../ex1/">Exercise 1</a>&nbsp;&nbsp;
@@ -61,10 +62,75 @@
         <a class="colored_link" href="../Assignment2/index.html">Assignment 2</a>&nbsp;&nbsp;
         <a class="colored_link" href="../assignment3/index.html">Assignment 3</a>
     </nav>
+<br>
+<div id="container">
+<div id='map'></div>
+<script src="scriptmap.js" type="text/javascript"></script>
+  <br>
+<script src="scriptleaflet.js" type="text/javascript"></script>
+  </div>
+  <br>
+  <script type="text/javascript">
 
-<p>
-<iframe width="1200" height="800" src="https://datastudio.google.com/embed/reporting/1XWyfnx_EEY1MCqO4sosJV2Zg0IAqVkpL/page/a3wl" frameborder="0" style="border:0" allowfullscreen></iframe>
-</p>>
+//setting map extent
+var map = L.map('map').setView([37.6916159, -94.9964676], 4);
+// add an OpenStreetMap tile layer
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: 'The map contributors',
+    maxZoom: 18
+}).addTo(map);
+
+//data
+var myPoints = [
+        [5 ,38.841739, -105.042474, "Pikes Peak"],
+        [5 ,44.428641, -110.588411, "Yellowstone National Park"],
+        [8 ,43.664045, -114.664420, "Smoky Mountains"],
+        [3 ,36.107772, -112.042613, "Grand Canynon"],
+        [8 ,36.172518, -115.158422, "Las Vegas"],
+        [8 ,40.689453, -74.044533, "Statue of Liberty"],
+        [5 ,38.8894583,-77.0373601, "Washington Monument"],
+        [3 ,28.385516, -81.563831, "Disney World, orlando"],
+        [3 ,38.829061, -104.811980, "Colordao Springs"],
+        [5, 36.570281, -117.056768, "Death Valley"],
+];
+//Priority Setting
+var breaks = [3, 5, 8,]; 
+var labels = ['Top Priority', 'Moderate', 'Below Moderate'];
+//set color of marker function
+
+function getColor(d) {
+    return  d == '3' ? "#a1dab4" :
+    d == '5' ? "#2c7fb8" :
+    d == '8' ? "#41b6c4":
+    "#FFFFFF";
+}
+for (var i = 0; i < myPoints.length; i++) {
+    marker = new L.circleMarker([myPoints[i][1],myPoints[i][2]], {
+    radius: myPoints[i][0]*5/2,
+    fillColor: getColor(myPoints[i][0]), 
+    color: "#000",
+    stroke: true,
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.9   
+})
+.bindPopup(myPoints[i][3]) //note there is no comma here
+.addTo(map);
+}
+
+var legend = L.control({position: 'bottomright'});
+legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info legend');
+    // loop through items and generate legend items each
+    for (var i = 0; i < breaks.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(breaks[i]) + ' "></i> ' +
+            labels[i] + (breaks ? '' +  '<br>' : '');
+    }
+    return div;
+};
+legend.addTo(map);
+</script>
 
 <footer> <b>Rakibul Ahasan</b> <br> Department of Community and Regional Planning <br> Iowa State University <br> Ames, IA 50011. 
 </footer>
