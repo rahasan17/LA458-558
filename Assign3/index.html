@@ -12,7 +12,10 @@
     <script src="https://code.highcharts.com/modules/heatmap.js"></script>
     <script src="https://code.highcharts.com/modules/tilemap.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <style>
+    <!-- importing AJAX plugin  -->
+    <script src="https://indicator.extension.iastate.edu/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
+    <script src="https://rahasan17.github.io/LA458-558/Assign3/maps.geojson"></script>
+  <style>
         header, footer { padding: 0.5em; color: white; background-color: DarkSlateGray; clear: none; text-align: center; justify-content: left}
          h1{color: White; text-align: center; background: none; font-size: 28px; font-family: Calibri;}
          h2 {color:Black; text-align: center; font-size: 24px; font-family: Calibri;}
@@ -675,48 +678,51 @@ var map = L.map('map', {
     };
   
     L.control.layers(baseMaps, overlayMaps).addTo(map);
-      
-//Geojson map: Priority ---  [1 external Geojson]
- 
-    var myPoints = [
-        [3 ,41.3, -124, "Redwood National Park"],
-        [3 ,37.85, -119.55, "Yosemite National Park"],
-        [9 ,37.6283, -112.168, "Bryce Cannyon National Park"],
-        [6 ,38.68333, -109.567, "Arches National Park"],
-        [9 ,44.6, -110.5, "Yellow Stone National Park"],
-        [6 ,36.98333, -110.1, "Monument Vally National Park"],
-        [9 ,38.841739, -105.042474, "Pikes Peak"],
-        [9 ,43.664045, -114.664420, "Smoky Mountains"],
-        [3 ,36.107772, -112.042613, "Grand Canynon"],
-        [9 ,36.172518, -115.158422, "Las Vegas"],
-        [6 ,38.829061, -104.811980, "Colordao Springs"],
-        [6, 36.570281, -117.056768, "Death Valley"],
-];
-  //Priority Setting
-var breaks = [3, 6, 9,]; 
-var labels = ['Low Priority', 'Medium Priority', 'High Priority'];
-   //Setting the color of th marker based on Priority
+  </script>
+  <script>
+
+
+//Geojson map: Priority --- Assign3: 1 external Geojson
+    
+var myURL = "https://rahasan17.github.io/LA458-558/Assign3/maps.geojson";
+function style(feature) {
+    return {
+        stroke: false,
+        fillColor: ((feature.properties.rank == 3) ? '#a1dab4' : 
+            (feature.properties.rank == 5) ? '#2c7fb8' :
+            (feature.properties.rank == 8) ? '#41b6c4': '#d73027'),
+        weight: 0
+    };
+}
+var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
+    style: style,
+   pointToLayer: function (feature, latlng) {
+        return new L.circleMarker(latlng, {
+            fillOpacity: 7.5,
+            radius: feature.properties.rank+7,
+           //title: this is not supported here - see layer.bindTooltip  below
+        });
+    },
+
+    onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.name + "</strong>";
+        layer.bindPopup(htmlText);
+        textForTooltip = feature.properties.name+ " is " + feature.properties.type + " with a ranking point of " + feature.properties.rank;
+        layer.bindTooltip(textForTooltip);
+    }
+}).addTo(map);
+
+var breaks = [8, 5, 3,]; 
+var labels = ['Top Priority', 'Moderate Priority', 'Below Moderate Priority'];
 function getColor(d) {
-    return  d == '3' ? "#3ACE2A" :
-    d == '6' ? "#312CCE" :
-    d == '9' ? "#CE4F36":
+    return  d == '3' ? "#a1dab4" :
+    d == '5' ? "#2c7fb8" :
+    d == '8' ? "#41b6c4":
     "#FFFFFF";
 }
-for (var i = 0; i < myPoints.length; i++) {
-    marker = new L.circleMarker([myPoints[i][1],myPoints[i][2]], {
-    radius: myPoints[i][0]*5/2,
-    fillColor: getColor(myPoints[i][0]), 
-    color: "#000",
-    stroke: true,
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 0.9   
-})
-.bindPopup(myPoints[i][3]) //note there is no comma here
-.addTo(map);
-}
-//Setting the legend based on the color and priority
-var legend = L.control({position: 'bottomright'});
+
+
+var legend = L.control({position: 'bottomleft'});
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
     // loop through items and generate legend items each
@@ -727,9 +733,9 @@ legend.onAdd = function (map) {
     }
     return div;
 };
-legend.addTo(map);  
-     </script>
-
+legend.addTo(map);
+  </script>
+<br>
 <br>
 <footer> <b>Rakibul Ahasan</b> <br> Department of Community and Regional Planning <br> Iowa State University <br> Ames, IA 50011. 
 </footer>
