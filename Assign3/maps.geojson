@@ -57,7 +57,7 @@
         "marker-symbol": "circle",
         "type": "Moderate",
         "name": "Houston",
-        "rank": 3
+        "rank": 5
       },
       "geometry": {
         "type": "Point",
@@ -81,7 +81,7 @@
         "marker-symbol": "circle",
         "type": "Moderate",
         "name": "Texas",
-        "rank": 3
+        "rank": 5
       },
       "geometry": {
         "type": "Point",
@@ -103,7 +103,7 @@
         "marker-color": "#800040",
         "marker-size": "medium",
         "marker-symbol": "circle-stroked",
-        "type": "Moderate",
+        "type": "Below Moderate",
         "name": "Texas",
         "rank": 3
       },
@@ -223,7 +223,7 @@
         "marker-color": "#800040",
         "marker-size": "medium",
         "marker-symbol": "circle-stroked",
-        "type": "Moderate",
+        "type": "Below Moderate",
         "name": "Ohio",
         "rank": 3
       },
