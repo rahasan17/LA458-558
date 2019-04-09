@@ -597,7 +597,7 @@ Highcharts.chart('container', {
           <h3> GeoJSON and Leaflet to Show the travel plan </h3>
         
           <p> My friends are planning on visiting California, Nevada, Utah, Arizona, Colorado and Idaho this summer. We all are planning on attending the ESRI User Conference in San Diego and go on a road trip in those areas.
-   I think that is an amazing idea for exploring western U.S.</p>  
+   I think that is an amazing idea for exploring western U.S. I have created leaflet markers in the following maps showing the states we are planning on visiting. Also, I have incorporated my previous plan which I have prepared earlier this semester. Among those, I have visited Florida this spring break. How awesome is that?!</p>  
     <br><br>
                        
 <div id="map"></div>
@@ -658,7 +658,7 @@ lineCap: 'square'
 });
 var Cities = L.layerGroup([california, california2, nevada, utah, Arizona, Colorado, Idaho]);
       
-//create the map
+//creating the map
 var map = L.map('map', {
         center: new L.LatLng(37.6916159, -94.9964676),
         zoom: 4,
@@ -682,15 +682,15 @@ var map = L.map('map', {
   <script>
 
 
-//Geojson map: Priority --- Assign3: 1 external Geojson
+//Geojson map: Priority ---  [1 external Geojson]
     
 var myURL = "https://rahasan17.github.io/LA458-558/Assign3/maps.geojson";
 function style(feature) {
     return {
         stroke: false,
-        fillColor: ((feature.properties.rank == 3) ? '#a1dab4' : 
-            (feature.properties.rank == 5) ? '#2c7fb8' :
-            (feature.properties.rank == 8) ? '#41b6c4': '#d73027'),
+        fillColor: ((feature.properties.rank == 3) ? '#CE4F36' : 
+            (feature.properties.rank == 5) ? '#3ACE67' :
+            (feature.properties.rank == 8) ? '#2520CE': '#d73027'),
         weight: 0
     };
 }
@@ -715,12 +715,12 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 var breaks = [8, 5, 3,]; 
 var labels = ['Top Priority', 'Moderate Priority', 'Below Moderate Priority'];
 function getColor(d) {
-    return  d == '3' ? "#a1dab4" :
-    d == '5' ? "#2c7fb8" :
-    d == '8' ? "#41b6c4":
+    return  d == '3' ? "#CE4F36" :
+    d == '5' ? "#3ACE67" :
+    d == '8' ? "#2520CE":
     "#FFFFFF";
 }
-
+//Creatig the legend
 
 var legend = L.control({position: 'bottomleft'});
 legend.onAdd = function (map) {
