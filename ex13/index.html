@@ -94,42 +94,8 @@
 
      <div id='map'></div>
     
-<script>
-  var map;
-////Geojson map: local data
-var path = {
-            "type": "FeatureCollection",
-            "features": [
-                {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [[-93.632897,
-            42.029627], [ -104.992538,
-            39.738579] ]
-                    },
-                    "properties": {"distance": 11, }
-                },
-                {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [[  -104.992538,
-            39.738579], [-111.897863,40.759248] ]
-                    },
-                    "properties": {"distance": 9, }
-                },
-                {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [[-111.897863,40.759248], [-115.152850,
-            36.168673] ]
-                    },
-                    "properties": {"distance": 6, }
-                },
-            ]
-        };
+    
+    <script>
 var Stamen_TonerLines = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   subdomains: 'abcd',
@@ -143,59 +109,18 @@ map = L.map('map', {
   zoom: 4,
   layers: [Stamen_TonerLines]
 });
-//colors to style line segment based on distance property
-function getColor(distance) {
-            return distance > 10 ? 'red' :
-                   distance > 8  ? 'orange' :
-                   distance > 5  ? 'green' :
-                              'yellow';
-            }
-//Style line and call getColor Function
-function style(feature) {
-            return {
-                weight: 8,
-                opacity: 1,
-                color: getColor(feature.properties.distance),
-            };
-        }
-var road = L.geoJson(path, {style: style}).addTo(map);
-road.addEventListener('click dblclick', function(e) {
-            alert(e.layer.feature.properties.distance)
-});
-    </script> 
-    
-    <script>
 
-// Base Map
-var OpenTopoMap = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-  maxZoom: 18,
-  attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-});
 
-var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-});
-
-var Hydda_Base = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
-  maxZoom: 18,
-  attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-});
     
 //Geojson map: Ajax Style
 var myURL = "https://rahasan17.github.io/LA458-558/ex13/map.geojson";
   
         var map = L.map('map', {
-  center: [41.837, -93.615],
-  zoom: 6.4,
-  layers: [Hydda_Base]
+  center: new L.LatLng(41, -100),
+  zoom: 4,
+  layers: [Stamen_TonerLines]
 });
-//Layer Control for basemap
-var baseMaps = {
-  "TopgraphyMap": OpenTopoMap,
-  "OpenStreetMap": OpenStreetMap_Mapnik,
-  "SeaMap":Hydda_Base,
-};
+
 //set color of marker
 function getColor(d) {
   return d <= '500000' ? '#02fc2c' :
