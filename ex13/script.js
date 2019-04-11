@@ -46,13 +46,13 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
     onEachFeature: function (feature, layer) {
         htmlText = "<strong>" + feature.properties.name + "</strong>";
         layer.bindPopup(htmlText);
-        textForTooltip = feature.properties.name+ " was " + feature.properties.type + " priority for grad school with a ranking point of " + feature.properties.rank;
+        textForTooltip = feature.properties.name+ " was " + feature.properties.type + " for grad school with a priority ranking point of " + feature.properties.rank;
         layer.bindTooltip(textForTooltip);
     }
 }).addTo(map);
 
 var breaks = [3, 5, 8,]; 
-var labels = ['Top Priority', 'Moderate', 'Below Moderate'];
+var labels = ['Top Priority', 'Moderate Priority', 'Below Moderate Priority'];
 function getColor(d) {
     return  d == '3' ? "#a1dab4" :
     d == '5' ? "#2c7fb8" :
