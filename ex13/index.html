@@ -10,7 +10,8 @@
     <!-- importing AJAX plugin  -->
     <script src="https://indicator.extension.iastate.edu/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
     <script src="https://rahasan17.github.io/LA458-558/ex13/map.geojson"></script>
-    <style>
+    <script src="https://rahasan17.github.io/LA458-558/ex13/maps.geojson"></script>
+  <style>
         header, footer { padding: 0.5em; color: white; background-color: DarkSlateGray; clear: none; text-align: center; justify-content: left}
          h1{color: White; text-align: center; background: none; font-size: 28px; font-family: Calibri;}
          h2 {color:Black; text-align: center; font-size: 24px; font-family: Calibri;}
@@ -81,17 +82,6 @@
         <a class="colored_link" href="../Assignment2/index.html">Assignment 2</a>&nbsp;&nbsp;
         <a class="colored_link" href="../Assign3/index.html">Assignment 3</a>
     </nav>
-  <br>
-  <p>
-    
-    <br>
-        <br>
-       
-    </p>
-    <br>
-    <br>
-
-     <div id='map'></div>
 
 
   <h2> The Universities I wanted to go for my Ph.D. </h2>
@@ -99,8 +89,164 @@
   <br>
     <div id="container">
 <div id='map'></div>
-<script src="script.js" type="text/javascript"></script>
-    
+      
+      <script>
+  var map;
+////Geojson map: local data
+var path = {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [[-93.7353515625,
+          41.934976500546604], [ -104.1064453125,
+          39.198205348894795] ]
+                    },
+                    "properties": {"distance": 12, }
+                },
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [[  -104.1064453125,
+          39.198205348894795], [-113.99414062499999,
+          43.929549935614595] ]
+                    },
+                    "properties": {"distance": 15, }
+                },
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [[-113.99414062499999,
+          43.929549935614595], [-117.20214843749999,
+          40.212440718286466] ]
+                    },
+                    "properties": {"distance": 9, }
+                },
+              {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [[  -117.20214843749999,
+          40.212440718286466], [-121.1572265625,
+          39.36827914916014] ]
+                    },
+                    "properties": {"distance": 6, }
+                },
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [[-121.1572265625,
+          39.36827914916014], [-112.1484375,
+          34.30714385628804] ]
+                    },
+                    "properties": {"distance": 11, }
+                },
+            ]
+        };
+var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+});
+
+var esriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+
+var map = L.map('map', {
+    center: [37.6916159, -94.9964676],
+    zoom: 4,
+    layers: [osm]
+});
+
+// Adding controls for baselayers, overlays:
+
+var baseMaps = {
+    "Streets": osm,
+    "Aerial": esriWorldImagery
+};
+
+L.control.layers(baseMaps).addTo(map);
+//colors to style line segment based on distance property
+function getColor(distance) {
+            return distance > 12 ? 'blue' :
+            distance > 10 ? 'red' :
+                   distance > 8  ? 'orange' :
+                   distance > 5  ? 'green' :
+                              'yellow';
+            }
+//Style line and call getColor Function
+function style(feature) {
+            return {
+                weight: 8,
+                opacity: 1,
+                color: getColor(feature.properties.distance),
+            };
+        }
+var road = L.geoJson(path, {style: style}).addTo(map);
+road.addEventListener('click dblclick', function(e) {
+            alert(e.layer.feature.properties.distance)
+});
+    </script> 
+      </script>
+<script>
+  // Initializing two tile layer variables:
+
+
+var myURL = "https://rahasan17.github.io/LA458-558/ex13/maps.geojson";
+function style(feature) {
+    return {
+        stroke: false,
+        fillColor: ((feature.properties.rank == 3) ? '#a1dab4' : 
+            (feature.properties.rank == 5) ? '#2c7fb8' :
+            (feature.properties.rank == 8) ? '#41b6c4': '#d73027'),
+        weight: 0
+    };
+}
+var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
+    style: style,
+   pointToLayer: function (feature, latlng) {
+        return new L.circleMarker(latlng, {
+            fillOpacity: 0.85,
+            radius: feature.properties.rank+7,
+           //title: this is not supported here - see layer.bindTooltip  below
+        });
+    },
+
+    onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.name + "</strong>";
+        layer.bindPopup(htmlText);
+        textForTooltip = feature.properties.name+ " was " + feature.properties.type + " for grad school with a priority ranking point of " + feature.properties.rank;
+        layer.bindTooltip(textForTooltip);
+    }
+}).addTo(map);
+
+var breaks = [3, 5, 8,]; 
+var labels = ['Top Priority', 'Moderate Priority', 'Below Moderate Priority'];
+function getColor(d) {
+    return  d == '3' ? "#a1dab4" :
+    d == '5' ? "#2c7fb8" :
+    d == '8' ? "#41b6c4":
+    "#FFFFFF";
+}
+
+
+var legend = L.control({position: 'bottomright'});
+legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info legend');
+    // loop through items and generate legend items each
+    for (var i = 0; i < breaks.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(breaks[i]) + ' "></i> ' +
+            labels[i] + (breaks ? '' +  '<br>' : '');
+    }
+    return div;
+};
+legend.addTo(map);
+      </script>
 <br>
 </div>
 <footer> <b>Rakibul Ahasan</b> <br> Department of Community and Regional Planning <br> Iowa State University <br> Ames, IA 50011. 
