@@ -84,8 +84,8 @@
     </nav>
 
 
-  <h2> The Universities I wanted to go for my Ph.D. </h2>
-  <p> I have applied to a number of schools to pursue my Ph.D. Here, I have listed the locations of the institutions <br>
+  <h2> Universities I wanted to go for my Ph.D. </h2>
+  <p> I have applied to a number of schools to pursue my Ph.D. Here, I have listed the locations of the institutions. <br> Also, in the last assignment (assignment 3), I have discussed about my plan on attending ESRI User conference in California this summer and then go to a few places in Idaho, Utah, Arizona and Colorado. I plotted a road map for the trip considering the trip length.</p>
   <br>
     <div id="container">
 <div id='map'></div>
@@ -172,10 +172,10 @@ var baseMaps = {
 L.control.layers(baseMaps).addTo(map);
 //colors to style line segment based on distance property
 function getColor(distance) {
-            return distance > 12 ? 'blue' :
-            distance > 10 ? 'red' :
-                   distance > 8  ? 'orange' :
-                   distance > 5  ? 'green' :
+            return distance > 12 ? 'darkblue' :
+            distance > 10 ? 'blue' :
+                   distance > 8  ? 'lightblue' :
+                   distance > 5  ? 'slateblue' :
                               'yellow';
             }
 //Style line and call getColor Function
@@ -200,9 +200,9 @@ var myURL = "https://rahasan17.github.io/LA458-558/ex13/maps.geojson";
 function style(feature) {
     return {
         stroke: false,
-        fillColor: ((feature.properties.rank == 3) ? '#a1dab4' : 
-            (feature.properties.rank == 5) ? '#2c7fb8' :
-            (feature.properties.rank == 8) ? '#41b6c4': '#d73027'),
+        fillColor: ((feature.properties.rank == 3) ? 'maroon' : 
+            (feature.properties.rank == 5) ? 'red' :
+            (feature.properties.rank == 8) ? 'grey': '#slateblue'),
         weight: 0
     };
 }
@@ -227,9 +227,9 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
 var breaks = [3, 5, 8,]; 
 var labels = ['Top Priority', 'Moderate Priority', 'Below Moderate Priority'];
 function getColor(d) {
-    return  d == '3' ? "#a1dab4" :
-    d == '5' ? "#2c7fb8" :
-    d == '8' ? "#41b6c4":
+    return  d == '3' ? "maroon" :
+    d == '5' ? "red" :
+    d == '8' ? "grey":
     "#FFFFFF";
 }
 
