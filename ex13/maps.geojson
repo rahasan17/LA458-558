@@ -8,7 +8,7 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Top Priority",
-        "name": "Georgia",
+        "name": "Georgia Tech",
         "rank": 8
       },
       "geometry": {
@@ -31,9 +31,9 @@
         "marker-color": "#ea1333",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Below Moderate",
-        "name": "Massachusetts",
-        "rank": 3
+        "type": "Top Moderate",
+        "name": "MIT",
+        "rank": 8
       },
       "geometry": {
         "type": "Point",
@@ -56,7 +56,7 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Moderate",
-        "name": "Houston",
+        "name": "Austin",
         "rank": 5
       },
       "geometry": {
@@ -80,7 +80,7 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Moderate",
-        "name": "Texas",
+        "name": "Texas A&M",
         "rank": 5
       },
       "geometry": {
@@ -104,7 +104,7 @@
         "marker-size": "medium",
         "marker-symbol": "circle-stroked",
         "type": "Below Moderate",
-        "name": "Texas",
+        "name": "UT Dallas",
         "rank": 3
       },
       "geometry": {
@@ -128,7 +128,7 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Top Priority",
-        "name": "California",
+        "name": "UCLA",
         "rank": 8
       },
       "geometry": {
@@ -152,7 +152,7 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Top Priority",
-        "name": "Florida",
+        "name": "FSU",
         "rank": 8
       },
       "geometry": {
@@ -176,7 +176,7 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Below Moderate",
-        "name": "Colorado",
+        "name": "Colorado Boulder",
         "rank": 5
       },
       "geometry": {
@@ -200,7 +200,7 @@
         "marker-size": "medium",
         "marker-symbol": "circle",
         "type": "Below Moderate",
-        "name": "North Carolina",
+        "name": "UNC Chapel Hill",
         "rank": 5
       },
       "geometry": {
@@ -224,7 +224,7 @@
         "marker-size": "medium",
         "marker-symbol": "circle-stroked",
         "type": "Below Moderate",
-        "name": "Ohio",
+        "name": "OSU",
         "rank": 3
       },
       "geometry": {
