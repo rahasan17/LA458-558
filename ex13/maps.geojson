@@ -151,9 +151,9 @@
         "marker-color": "#ffff00",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Top Priority",
+        "type": "Below Moderate",
         "name": "FSU",
-        "rank": 8
+        "rank": 3
       },
       "geometry": {
         "type": "Point",
@@ -199,7 +199,7 @@
         "marker-color": "#ff0000",
         "marker-size": "medium",
         "marker-symbol": "circle",
-        "type": "Below Moderate",
+        "type": "oderate",
         "name": "UNC Chapel Hill",
         "rank": 5
       },
