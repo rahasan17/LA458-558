@@ -229,9 +229,9 @@ console.log(nearest.properties.id);
 //5:make change in the zoom of map
 var mapCenter = L.latLng(42.05,-93.6);
   
-var map = L.map('mapid').setView(mapCenter, 11);
+var map = L.map('mapid').setView(mapCenter, 12);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    maxZoom: 10,
+    maxZoom: 15,
     attribution: ''
   }).addTo(map);
 var mapCenterMarker = L.marker(mapCenter).addTo(map);
