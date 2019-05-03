@@ -1,0 +1,1706 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width">
+  <title> Final Project </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" /> 
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="https://indicator.extension.iastate.edu/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+  <script src="https://code.highcharts.com/modules/tilemap.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<style id="jsbin-css">
+  #map1container {
+    position:absolute;
+    background-color:#566D7E;
+    color: black;
+    text-align: left;
+    margin-right:0px;
+    margin-left:0px;
+    width: 420px;
+    height: 400px;
+    padding: 1em;
+  }
+  #map2container {
+    position:absolute;
+    background-color:#566D7E;
+    color: black;
+    text-align: left;
+    margin-right:0px;
+    margin-left:750px;
+    width: 420px;
+    height: 400px;
+    padding: 0.5em;
+  }
+  #map3container {
+    position:absolute;
+    background-color:#566D7E;
+    color: black;
+    text-align: left;
+    margin-right:0px;
+    margin-left:0px;
+    width: 420px;
+    height: 400px;
+    padding: 1em;
+  }
+  #map4container {
+    position:absolute;
+    background-color:#566D7E;
+    color: black;
+    text-align: left;
+    margin-right:0px;
+    margin-left:0px;
+    width: 420px;
+    height: 400px;
+    padding: 1em;
+  }
+#map5container {
+  position:absolute;
+  background-color:#566D7E;
+  color: black;
+  text-align: left;
+  margin-right:0px;
+  margin-left:0px;
+  width: 470px;
+  height: 550px;
+  padding: 1em; 
+}
+  #map6container {
+  position:absolute;
+  background-color:#566D7E;
+  color: black;
+  text-align: left;
+  margin-right:0px;
+  margin-left:0px;
+  width: 470px;
+  height: 350px;
+  padding: 1em; 
+}
+#map1 {
+  position:relative;
+  width: 750px;
+  height: 400px;
+  margin-left: 420px;
+  border-left: 2px solid gray;
+  padding: 1em;
+  overflow: hidden;
+    /* background-color: red;*/ 
+}
+  #map4 {
+    position:relative;
+     width: 750px;
+     height: 400px;
+     margin-left: 420px;
+     border-left: 2px solid gray;
+     padding: 1em;
+     overflow: hidden;
+    /* background-color: red;*/
+}
+#map {
+  position:relative;
+     width: 750px;
+     height: 400px;
+     margin-right: 420px;
+     border-right: 2px solid gray;
+     padding: 1em;
+     overflow: hidden;
+    /* background-color: red;*/    
+}
+
+#map2 {
+  position:relative;
+  width: 750px;
+  height: 400px;
+  margin-left: 420px;
+  border-left: 2px solid gray;
+  padding: 1em;
+  overflow: hidden;
+  /* background-color: red;*/   
+}
+#map5 {
+  position:relative;
+  width: 700px;
+  height: 550px;
+  margin-left: 470px;
+  border: 2px solid gray;
+  padding: 1em;
+  overflow: hidden;
+  /* background-color: red;*/
+}
+
+#map3 {
+  position:relative;
+  width: 750px;
+  height: 400px;
+  margin-right: 420px;
+  border-right: 2px solid gray;
+  padding: 1em;
+  overflow: hidden;
+  /* background-color: red;*/
+}
+
+#container {
+  background-color: white;
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  border-style: solid;
+  border-width: 5px;
+}
+
+#image= {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+#header1  {
+  width: 1200px;
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  margin-right: auto;
+  background-color: Darkslategray;
+  color: red;
+  text-align: left;
+}
+
+#header, #footer {
+  width: 1190px;
+  clear: both;
+  background-color: Darkslategray;
+  color: white;
+  text-align: Center;
+  margin-right: 350px;
+  margin-left: auto;
+  overflow: hidden;
+  padding: 0.2em;
+}
+
+/* Css for top manubar */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: White;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: underline;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+/* Css for top manubar end */
+
+
+
+.legend {
+    line-height: 20px;
+    color: #555;
+    }
+    .legend i {
+        width: 14px;
+        height: 30px;
+        float: left;
+        margin-right: 4px;
+        opacity: 1;
+    }
+    .info {
+        padding: 4px 8px;
+        font: 10px/15px Calibri, Helvetica, sans-serif;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 7px;
+    }
+  
+  header, footer{ width: 1190px; padding: 0.20em; color: white; background-color: DarkSlateGray; clear: none; text-align: center; justify-content: left}
+  h1 {color: White; text-decoration: bold; text-align: center; background: none; font-size: 28px; font-family: Calibri;}
+  h4 {margin-right:50px; color: White; text-decoration: bold; text-align: right; background: none; font-size: 28px; font-family: Calibri;}
+  h2 {color:#954535; text-align: left; font-size: 24px; font-family: Calibri;}
+  h3 {margin-right:50px; color:#B6B6B4; text-align: right; font-size: 22px; font-family: Calibri;}
+  h5 {color:#B6B6B4; text-align: left; font-size: 22px; font-family: Calibri;}
+  p { color:Black;  margin-right: 2%; margin-left: 2%; text-align: justify; font-size: 15px; font-family: Calibri; }
+  a { color:Blue; text-align: left; margin: auto;  font-size: 15px; font-family: Calibri;}
+  
+  </style>
+  </head>
+  
+  <body>
+    <div id="container">
+      <div id = "header">
+  <header>
+    <h1> CRP 558 WEB MAPPING/GIS <br> Final Project </h1>
+  </header>
+  </div>
+      <div id="manubar">
+        <ul>
+          <li><a class="active" href="#map1">Housing Statistics in the U.S. </a></li>
+          <li><a href="#map"> Demographics in the US </a></li>
+          <li><a href="#map2"> Housing Cost Burden </a></li>
+          <li><a href="#map4"> Income Information </a></li>
+          <li><a href="https://rahasan17.github.io/LA458-558/FinalProject/Proposal.html">Project Proposal</a></li>
+        </ul>
+      </div>
+  
+   <div id = "header">
+     <div id="header1">
+       <img id="image" src="https://wtar3.files.wordpress.com/2013/07/obama-housing-crisis1.jpg" alt="Housing Crisis" style="width:485px;height:300px;" align="left" opacity= "0.25">
+       <h4> Mapping Housing Ownership and <br>Demographic Profile of the U.S. </h4>
+       <br>
+       <h3><b>Rakibul Ahasan</b><br> 05/02/2019 </h3> <br> <br><br> <br><br> <br><br>
+     </div>
+    </div>
+    <br> 
+    <div  id='map1container'>
+      <h2><b> Housing Statistics in the U.S. </b></h2>
+      <b> Median Household Income:</b> $56,516 per year <br>
+      <b> Median Rent paid : </b> $982 per month <br>
+      <b> Median Mortgage Paid : </b> $1,089 per month <br>
+      <b> Percentage of People live in rented homes : </b> 37.1% (Total of 43,768,081 people)<br>
+      <br>The percentage of people who cannot afford to own their houses has been increasing and its almos doubled in the past 50 years. <br>
+      <br>Please click the button below to see the states with highest and lowest percentage of renter occupied houses in the U.S. <br><br>
+             
+     <div class="btn-group " data-toggle="buttons">
+       <label class="btn btn-success" id="ahasanbg">
+         <input type="radio" name="options" id="ahasange" autocomplete="off"> Highest Renter Percentage
+          </label>
+          <label class="btn btn-danger" id="ahasanbg2">
+            <input type="radio" name="options" id="university1" autocomplete="off"> Lowest Renter Percentage
+          </label>
+      </div>
+    </div>
+    
+    <div class="sametext" id='map1'></div>
+    <br>
+    <div  id='map2container'>
+      <h2> <b> Demographic Profile </b> </h2>
+      According to American Community Survey, 2017, the total population in the US is now 321,004,407. Among them 73.01% is White population, 12.65% Black or African American, 5.35% Asian and left 5% is two or more races or other races.
+      <br><br>
+      <div class="btn-group-justified">
+        <div class="btn-group">
+          <button type="button" id="white" color="black" class="btn btn-dark"> White </button>
+          <button type="button" id="black" class="btn btn-success"> Black</button>
+          <button type="button" id="hispanic" class="btn btn-dark"> Hispanic</button>
+          <button type="button" id="asian" class="btn btn-success"> Asian</button>
+          <button type="button" id="americanIndian" class="btn btn-dark">American Indian or Alaska Native</button>
+          <button type="button" id="nativeHawaiian" class="btn btn-success"> Native Hawaiian </button>
+          <button type="button" id="moreRaces" class="btn btn-dark"> Two Or More Races </button> <br>
+        </div>
+      </div>
+    </div>
+    
+     <div id='map'></div>
+    <br> 
+     <div  id='map3container'>
+       <h2 > <b> Cost Burden for Housing </b> </h2>
+       The definition of Housing Cost Burden are provided below:
+       <br>
+       <b> Housing Cost Burden : </b> Percentage of household income spent for mortgage costs or gross rent. According to HUD programs, households spending more than 30 percent of income for these housing costs are considered to be "cost-burdened".
+          <br><br>
+       In the United States, if the monthly expenditure for housing purposes is below 30% of any Individuals monthly income, it is called within affordable limit. However, there are other parameters which need to be considered in calculating this limit.
+      </div>
+     <div id='map2'></div>
+<br>
+      <div  id='map4container'>
+   <h2 > <b> Income Information </b> </h2>
+    <br><b> Median Income:</b> $56,516 per year
+    <br> <b> State with Highest Median Income:</b> New Mexico
+    <br> <b> State with Lowest Median Income: </b>Mississippi <br><br>
+    The household median income in the U.S. has been changing over the years. Except the recession years, it mostly followed an upward trend in the past 50 years. However, the percentage of median income spent in housing purposes have also increased by around 112% within this time period. <br> <br>
+    Please click to see the richest and poorest state in US <br> <br>
+             
+     <div class="btn-group " data-toggle="buttons">
+       <label class="btn btn-success" id="ahasanbg1">
+         <input type="radio" name="options" id="ahasange1" autocomplete="off"> Highest Median Income
+          </label>
+          <label class="btn btn-danger" id="ahasanbg23">
+            <input type="radio" name="options" id="university1" autocomplete="off"> Lowest Median Income
+          </label>
+           </div>
+          </div>
+    <div class="sametext" id='map4'></div>
+           <br>
+    <div  id='map5container'>
+   <h2 > <b> Summary </b> </h2>
+      The population density map and the maps showing rented-occupied housing units in each states or the housing cost-burden imply that there are differences in the relationship.
+The housing price or renter-occupied housing do not increase only if the state is densely populated or it has a higher/lower median income.      
+<br><br>The states in both the coastal areas have a higher rented occupied housing units compared to the midwestern states. At the same time, the median income and housing occupancy does not really dependent on each other (from the maps).    
+For example, New Mexico has the highest annual median income among the states. Highever, it is neither the most densely populated state nor the state with most renter-occupied housing. <br><br>
+      <b> Maps included in this page</b> 
+      <br>
+      1. Percentage of Renter-Occupied Housinng in each States <br>
+      2. Population in each Major Races in Each States <br>
+      3. Map showing Housing Cost Burden and GDP Rank in Each States <br>
+      4. Median Income of each of the States <br>
+      5. Highmap showing the Population Density in Each States.
+      <br> <br>
+      Data used here was collected from the Census Bureau website and wikipedia (wikipedia.org).
+      
+</div>    
+    <div class="sametext" id='map5'></div>
+ <div id = "header">   
+  <footer> <b>Rakibul Ahasan</b> <br> Department of Community and Regional Planning <br> Iowa State University <br> Ames, IA 50011. 
+</footer>
+</div>
+    </div>       
+<script>
+  
+  // Map 1: Renter Percentage in each state is shown here 
+
+ $(document).ready(function() {
+
+ //basemap
+   var Hydda_Base = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+   var Esri_NatGeoWorldMap =
+       L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+         attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+          maxZoom: 16
+    });
+   var OpenStreetMap = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+//map
+var map1= L.map('map1', {
+  center: new L.LatLng(38.21, -97.4507),
+  zoom: 4,
+  layers: [OpenStreetMap]
+    });
+var baseMaps = {
+  "Topgraphy Map": Esri_NatGeoWorldMap,
+  "Open Street Map": OpenStreetMap,
+  "Sea Map":Hydda_Base,
+};
+
+L.control.layers(baseMaps).addTo(map1);
+
+//get color
+function getColorp(d) {
+  return d <= '25' ? '#fff5f0' :
+  d <= '30' ? "#E18B6B" :
+  d <= '35' ? "#F88158" :
+  d <='40' ? "#E55451" :
+  d <= '45' ? "#FF2400" :
+  "#99000d";
+}
+
+
+function stylep(feature) {
+  return {
+    fillColor: getColorp(feature.properties.Renter_P),
+    weight: 1,
+    opacity: 1,
+    color: 'black',
+    dashArray: '0',
+    fillOpacity: 0.9
+    };
+}
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/map.json";
+
+var Renter_P= new L.GeoJSON.AJAX(link , {
+  style: stylep,
+  onEachFeature: function (feature, layer) {
+    htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Renter Occupancy Ranking : </strong>" +feature.properties.Renter_R+"<strong><br> Renter Occupied Housing : </strong>"+feature.properties.Renter_P+"%";
+    layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+}).addTo(map1);
+   
+ var legendp = L.control({
+  position: 'bottomleft'
+ });
+   legendp.onAdd = function(map1) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+      pop_size = [30,35,40,45, 50],
+      labels = ['0-30 %','30-35%', '35-40%', '40-45%', '>45%'];
+
+
+   div.innerHTML += "<strong> Percentage of Renter-<br> Occupied Housing </strong><br> <br>";
+
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColorp(pop_size[i] ) + ' "></i> ' +
+       labels[i]+'<br><br>';
+  }
+     return div;
+};
+legendp.addTo(map1);
+ 
+ var newyork= L.marker([42.6635, -74.9387]).bindPopup('Highest Renter Occupied State').addTo(map1);
+   
+  Wyoming=L.marker([43.021607, -107.611149]).bindPopup('Lowest Renter Occupied state').addTo(map1);
+
+ $('#ahasanbg').click(function () {
+   map1.setView([42.6635, -74.9387], 5.5);
+ });
+   $('#ahasanbg2').click(function () {
+     map1.setView([43.021607, -107.611149], 5.5);
+    });
+ });  
+
+// Map 2: Demographic Profile in each state is shown here
+  
+$(document).ready(function() {
+//White People
+ //basemap
+var Hydda_Base = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+    var Esri_NatGeoWorldMap =
+        L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+          maxZoom: 16
+    });
+
+  var OpenStreetMap = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+//map
+var map = L.map('map', {
+  center: new L.LatLng(38.21, -97.4507),
+  zoom: 4,
+  layers: [Hydda_Base]
+});
+var baseMaps = {
+  "Topgraphy Map": Esri_NatGeoWorldMap,
+  "Open Street Map": OpenStreetMap,
+  "Sea Map":Hydda_Base,
+};
+
+L.control.layers(baseMaps).addTo(map);
+
+//get color
+function getColor1(d) {
+  return d <= '247600' ? '#ccece6' :
+  d <= '1647200' ? "#99d8c9" :
+  d <= '3735000' ? "#41ae76" :
+  d <='6153900' ? "#238b45" :
+  d <= '15175500' ? "#005824" :
+  "#0e230e";
+}
+
+function style2(feature) {
+    return {
+      fillColor: getColor1(feature.properties.White),
+      weight: 1,
+      opacity: 1,
+      color: 'black',
+      dashArray: '0',
+      fillOpacity: 0.9
+    };
+}
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+
+var white = new L.GeoJSON.AJAX(link , {
+  style: style2,
+  onEachFeature: function (feature, layer) {
+    htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Total Population : </strong>"  + feature.properties.Total1 + "<br><strong>Total Number ofWhite People : </strong>"+feature.properties.White+"<strong><br> Percentage of White People : </strong>"+feature.properties.White_P+"%";
+    layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+  }
+});
+
+var legend1 = L.control({
+  position: 'bottomleft'
+});
+
+legend1.onAdd = function(map) {
+  var div = L.DomUtil.create('div', 'info legend'),
+      pop_size = [247600,3735000, 6153900,15175500],
+      labels = ['0-247,601','247,601-373,5000', '3,735,001-6,153,900', '6,153,901- 15,175,500'];
+
+
+   div.innerHTML += "<strong> Total Population </strong><br> <br>";
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColor1(pop_size[i] ) + ' "></i> ' +
+      labels[i]+'<br><br>';
+  }
+  return div;
+};
+
+//Black People
+function getColor2(d) {
+    return d <= '5400' ? '#7F4E52' :
+    d <= '681400' ? "#7D0552" :
+    d <= '1471500' ? "#7F5A58" :
+    d <='1582500' ? "#B38481" :
+    d <= '3198600' ? "#C48189" :
+    "#E8ADAA";
+}
+
+function style3(feature) {
+  return {
+    fillColor: getColor2(feature.properties.Black),
+    weight: 0.5,
+    opacity: 1,
+    color: 'black',
+    dashArray: '0',
+    fillOpacity: 0.9
+    };
+}
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+
+var black = new L.GeoJSON.AJAX(link , {
+  style: style3,
+  onEachFeature: function (feature, layer) {
+    htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Total Population : </strong>"  + feature.properties.Total1 + "<br><strong>Total Number of Black People : </strong>"+feature.properties.Black+"<strong><br> Percentage of Black People : </strong>"+feature.properties.Black_P+"%";
+    layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+});
+
+var legend2 = L.control({
+  position: 'bottomleft'
+});
+  
+legend2.onAdd = function(map) {
+  var div = L.DomUtil.create('div', 'info legend'),
+      pop_size = [681400,1471500, 2095200,3198601],
+      labels = ['0-681,400','681,401-1,471,500', '1,471,501-1,582,500', '2,095,200- 3,198,601'];
+  div.innerHTML += "<strong> Total Population </strong><br> <br>";
+
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColor2(pop_size[i] ) + ' "></i> ' +
+      labels[i]+'<br><br>';
+  }
+
+  return div;
+};
+  
+//Hispanic People
+function getColor3(d) {
+    return d <= '247600' ? '#fee8c8' :
+    d <= '1647200' ? "#fdbb84" :
+   d <= '3735000' ? "#fc8d59" :
+    d <='6153900' ? "#ef6548" :
+   d <= '15175500' ? "#d7301f" :
+    "#990000";
+}
+  
+function style4(feature) {
+    return {
+       fillColor: getColor3(feature.properties.Hispanic),
+        weight: 0.5,
+        opacity: 1,
+        color: 'black',
+        dashArray: '0',
+        fillOpacity: 0.9
+    };
+}
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+
+var hispanic= new L.GeoJSON.AJAX(link , {
+  style: style4,
+  onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Total Population : </strong>"  + feature.properties.Total1 + "<br><strong>Total Number of Hispanic People : </strong>"+feature.properties.Hispanic+"<strong><br> Percentage of Hispanic People : </strong>"+feature.properties.Hispanic_P+"%";
+        layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+});
+
+var legend3 = L.control({
+  position: 'bottomleft'
+});
+
+legend3.onAdd = function(map) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+    pop_size = [247600,1647200, 6153900,15175500],
+    labels = ['0-247600','247601-1647200', '1647201-6153900', '6153901- 15175500'];
+
+
+   div.innerHTML += "<strong> Total Population</strong><br> <br>";
+
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColor3(pop_size[i] ) + ' "></i> ' +
+       labels[i]+'<br><br>';
+  }
+
+  return div;
+};
+
+//AsianPeople
+function getColor4(d) {
+    return d <= '3100' ? '#ece7f2' :
+    d <= '250700' ? "#d0d1e6" :
+   d <= '549500' ? "#a6bddb" :
+    d <='940900' ? "#3690c0" :
+   d <= '5773700' ? "#0570b0" :
+    "#034e7b";
+}
+
+function style5(feature) {
+    return {
+       fillColor: getColor4(feature.properties.Asian),
+        weight: 0.5,
+        opacity: 1,
+        color: 'black',
+        dashArray: '0',
+        fillOpacity: 0.9
+    };
+}
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+
+var asian= new L.GeoJSON.AJAX(link , {
+  style: style5,
+  onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Total Population : </strong>"  + feature.properties.Total1 + "<br><strong>Total Number of Asian People : </strong>"+feature.properties.Asian+"<strong><br> Percentage of Asian People : </strong>"+feature.properties.Asian_P+"%";
+        layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+});
+
+var legend4 = L.control({
+  position: 'bottomleft'
+});
+
+legend4.onAdd = function(map) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+    pop_size = [3100,250700, 940900,5773700],
+    labels = ['0-3,100','250700-549,500', '549,501-940,900', '940,901- 5,773,700'];
+
+
+   div.innerHTML += "<strong> Total Population </strong><br> <br>";
+
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColor4(pop_size[i] ) + ' "></i> ' +
+       labels[i]+'<br><br>';
+  }
+
+  return div;
+};
+
+//americanIndian
+function getColor5(d) {
+    return d <= '15800' ? '#fff7bc' :
+    d <= '37300' ? "#fee391" :
+   d <= '55200' ? "#fe9929" :
+    d <='113800' ? "#ec7014" :
+   d <= '352400' ? "#8c2d04" :
+    "#ffffe5";
+}
+
+function style6(feature) {
+    return {
+       fillColor: getColor5(feature.properties.American_1),
+        weight: 0.5,
+        opacity: 1,
+        color: 'black',
+        dashArray: '0',
+        fillOpacity: 0.9
+    };
+}
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+
+var americanIndian= new L.GeoJSON.AJAX(link , {
+  style: style6,
+  onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Total Population : </strong>"  + feature.properties.Total1 + "<br><strong>Total Number of American Indian People : </strong>"+feature.properties.American_1+"<strong><br> Percentage of American Indian People : </strong>"+feature.properties.American_+"%";
+        layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+});
+
+var legend5 = L.control({
+  position: 'bottomleft'
+});
+
+legend5.onAdd = function(map) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+    pop_size = [15800,55200, 113800,352400],
+    labels = ['15,800-37,300','37,301-55,200', '5,5201-113,800', '113,801- 113,801'];
+
+   div.innerHTML += "<strong> Total Population </strong><br> <br>";
+
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColor5(pop_size[i] ) + ' "></i> ' +
+       labels[i]+'<br><br>';
+  }
+
+  return div;
+};
+
+//Native Hawaiian
+function getColor6(d) {
+    return d <= '0' ? '#f0f0f0' :
+    d <= '2500' ? "#bdbdbd" :
+   d <= '7500' ? "#737373" :
+    d <='188800' ? "#525252" :
+   d <= '229000' ? "#252525" :
+    "#ffffff";
+}
+
+
+function style7(feature) {
+    return {
+       fillColor: getColor6(feature.properties.Hawaiian),
+        weight: 0.5,
+        opacity: 1,
+        color: 'black',
+        dashArray: '0',
+        fillOpacity: 0.9
+    };
+}
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+
+
+var nativeHawaiian= new L.GeoJSON.AJAX(link , {
+  style: style7,
+  onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Total Population : </strong>"  + feature.properties.Total1 + "<br><strong>Total Number of Native Hawaiian People : </strong>"+feature.properties.Hawaiian+"<strong><br> Percentage of Native Hawaiian People : </strong>"+feature.properties.Hawaiian_P+"%";
+        layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+});
+
+var legend6 = L.control({
+  position: 'bottomleft'
+});
+
+legend6.onAdd = function(map) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+    pop_size = [0,2500, 188800,229000],
+    labels = ['0-2,500','2,501-188,800', '188,801-113,800', '113,801- 229,000'];
+
+
+   div.innerHTML += "<strong> Total Population </strong><br> <br>";
+
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColor6(pop_size[i] ) + ' "></i> ' +
+       labels[i]+'<br><br>';
+  }
+
+  return div;
+};
+//Two or more races
+function getColor7(d) {
+    return d <= '10600' ? '#e7e1ef' :
+    d <= '56000' ? "#c994c7" :
+   d <= '131200' ? "#df65b0" :
+    d <='225100' ? "#ce1256" :
+   d <= '778300' ? "#91003f" :
+    "#f7f4f9";
+}
+
+
+function style8(feature) {
+    return {
+       fillColor: getColor7(feature.properties.Other),
+        weight: 0.5,
+        opacity: 1,
+        color: 'black',
+        dashArray: '0',
+        fillOpacity: 0.9
+    };
+}
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+
+var moreRaces= new L.GeoJSON.AJAX(link , {
+  style: style8,
+  onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Total Population : </strong>"  + feature.properties.Total1 + "<br><strong>Total Number of People of two or more races : </strong>"+feature.properties.Other+"<strong><br> Percentage of People of two or more races : </strong>"+feature.properties.Other_p+"%";
+        layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+});
+
+var legend7 = L.control({
+  position: 'bottomleft'
+});
+
+legend7.onAdd = function(map) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+    pop_size = [56000,131200, 225100,778300],
+    labels = ['10600-56000','56001-131200', '131201-225100', '225101- 778300'];
+
+   div.innerHTML += "<strong> Total Population </strong><br> <br>";
+
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColor7(pop_size[i] ) + ' "></i> ' +
+       labels[i]+'<br><br>';
+  }
+
+  return div;
+};
+$("#white").click(function() {
+        map.removeLayer(black);
+        map.removeLayer(hispanic);
+        map.addLayer(white);
+        map.removeLayer(asian);
+        map.removeLayer(nativeHawaiian);
+        map.removeLayer(americanIndian);
+         map.removeLayer(moreRaces);
+        $("div button").removeClass("active");
+        $(this).addClass("active");
+        map.addControl(legend1);
+        map.removeControl(legend2);
+        map.removeControl(legend3);
+        map.removeControl(legend4);
+        map.removeControl(legend5);
+        map.removeControl(legend6);
+         map.removeControl(legend7);
+
+      });
+  $("#black").click(function() {
+        map.removeLayer(white);
+        map.removeLayer(hispanic);
+        map.addLayer(black);
+        map.removeLayer(asian);
+       map.removeLayer(nativeHawaiian);
+        map.removeLayer(americanIndian);
+        map.removeLayer(moreRaces);
+        $("div button").removeClass("active");
+        $(this).addClass("active");
+        map.addControl(legend2);
+        map.removeControl(legend1);
+        map.removeControl(legend3);
+        map.removeControl(legend4);
+        map.removeControl(legend5);
+        map.removeControl(legend6);
+        map.removeControl(legend7);
+      });
+    $("#hispanic").click(function() {
+        map.removeLayer(white);
+        map.removeLayer(black);
+        map.removeLayer(asian);
+        map.addLayer(hispanic);
+        map.removeLayer(nativeHawaiian);
+        map.removeLayer(americanIndian);
+        map.removeLayer(moreRaces);
+        $("div button").removeClass("active");
+        $(this).addClass("active");
+        map.addControl(legend3);
+        map.removeControl(legend2);
+        map.removeControl(legend1);
+        map.removeControl(legend4);
+        map.removeControl(legend5);
+        map.removeControl(legend6);
+         map.removeControl(legend7);
+      });
+ 
+    $("#asian").click(function() {
+        map.removeLayer(white);
+        map.removeLayer(black);
+        map.removeLayer(hispanic);
+        map.addLayer(asian);
+        map.removeLayer(nativeHawaiian);
+         map.removeLayer(moreRaces);
+        map.removeLayer(americanIndian);
+        $("div button").removeClass("active");
+        $(this).addClass("active");
+        map.addControl(legend4);
+        map.removeControl(legend2);
+        map.removeControl(legend1);
+        map.removeControl(legend3);
+        map.removeControl(legend5);
+        map.removeControl(legend6);
+         map.removeControl(legend7);
+
+      });
+   $("#americanIndian").click(function() {
+        map.removeLayer(white);
+        map.removeLayer(black);
+        map.removeLayer(hispanic);
+        map.removeLayer(asian);
+        map.removeLayer(nativeHawaiian);
+         map.removeLayer(moreRaces);
+        map.addLayer(americanIndian);
+        $("div button").removeClass("active");
+        $(this).addClass("active");
+        map.addControl(legend5);
+        map.removeControl(legend2);
+        map.removeControl(legend1);
+        map.removeControl(legend3);
+        map.removeControl(legend4);
+        map.removeControl(legend6);
+        map.removeControl(legend7);
+      });
+       $("#nativeHawaiian").click(function() {
+        map.removeLayer(white);
+        map.removeLayer(black);
+        map.removeLayer(hispanic);
+        map.removeLayer(asian);
+        map.removeLayer(americanIndian);
+        map.addLayer(nativeHawaiian);
+        map.removeLayer(moreRaces);
+        $("div button").removeClass("active");
+        $(this).addClass("active");
+        map.addControl(legend6);
+        map.removeControl(legend2);
+        map.removeControl(legend1);
+        map.removeControl(legend3);
+        map.removeControl(legend4);
+        map.removeControl(legend5);
+        map.removeControl(legend7);
+      });
+    $("#moreRaces").click(function() {
+        map.removeLayer(white);
+        map.removeLayer(black);
+        map.removeLayer(hispanic);
+        map.removeLayer(asian);
+        map.removeLayer(americanIndian);
+        map.removeLayer(nativeHawaiian);
+        map.addLayer(moreRaces);
+        $("div button").removeClass("active");
+        $(this).addClass("active");
+        map.addControl(legend7);
+        map.removeControl(legend2);
+        map.removeControl(legend1);
+        map.removeControl(legend3);
+        map.removeControl(legend4);
+        map.removeControl(legend5);
+        map.removeControl(legend6);
+      });
+   
+ });  
+
+  // Map 3: The GDP and cost burden for Housing in each state is shown here
+
+  $(document).ready(function() {
+
+ //basemap
+var Hydda_Base = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+    var Esri_NatGeoWorldMap =
+        L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+          maxZoom: 16
+    });
+
+  var OpenStreetMap = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+
+//map
+var map2= L.map('map2', {
+  center: new L.LatLng(38.21, -97.4507),
+  zoom: 4,
+  layers: [OpenStreetMap]
+    });
+var baseMaps = {
+  "Topgraphy Map": Esri_NatGeoWorldMap,
+  "Open Street Map": OpenStreetMap,
+  "Sea Map":Hydda_Base,
+};
+
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+  
+function getColordp(d) {
+  return d <= '10' ? '#7E587E' :
+  d <= '20' ? "#571B7E" :
+  d <= '30' ? "#583759" :
+  d <='40' ? "#461B7E" :
+  d <= '51' ? "#4E387E" :
+  "#614051";
+}
+
+function styledp(feature) {
+    return {
+        fillColor: getColordp(feature.properties.GDP_R),
+        weight: 0.5,
+        opacity: 1,
+        color: 'black',
+        dashArray: '0',
+        fillOpacity: 1
+    };
+}
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+
+var domesticproduct = new L.GeoJSON.AJAX(link , {
+  style: styledp,
+  onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Total GDP in Million: </strong>"  + feature.properties.GDP_M + "<br><strong>Rank : </strong>"+feature.properties.GDP_R;
+        layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+}).addTo(map2);
+
+function getColorcb(d) {
+    return d <= '10' ? '#E78A61' :
+    d <= '20' ? "#E18B6B" :
+   d <= '30' ? "#E77471" :
+    d <='40' ? "#E75D59" :
+   d <= '51' ? "#FF0000" :
+    "#d9ef8b";
+}
+
+function stylecb(feature) {
+    return {
+        fillColor: getColorcb(feature.properties.GDP_R),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.8
+    };
+}
+var costbrand = new L.GeoJSON.AJAX(link , {
+  style: stylecb,
+  onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> % of People having more 30% cost-burben for housing: </strong>"  + feature.properties.Cburden_R1 + "<br><strong>Rank : </strong>"+feature.properties.Cburden_R;
+        layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+});
+
+var legendcb = L.control({
+  position: 'bottomleft'
+});
+
+legendcb.onAdd = function(map2) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+    pop_size = [10,25, 40,50],
+    labels = ['0-10','10-25', '25-40', '40- 50'];
+
+   div.innerHTML += "<strong> Cost Burden Rank </strong><br> <br>";
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColorcb(pop_size[i] ) + ' "></i> ' +
+       labels[i]+'<br><br>';
+  }
+  return div;
+};
+  
+legendcb.addTo(map2);
+var legenddp = L.control({
+  position: 'bottomright'
+});
+
+legenddp.onAdd = function(map2) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+    pop_size = [10,25, 40,50],
+    labels = ['0-10','10-25', '25-40', '40- 50'];
+   div.innerHTML += "<strong> GDP RANK</strong><br> <br>";
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColordp(pop_size[i] ) + ' "></i> ' +
+       labels[i]+'<br><br>';
+  }
+  return div;
+};
+
+ legenddp.addTo(map2);
+ 
+var overlays = {
+  "GDP RANK": domesticproduct,
+  "Cost Burden Rank" :costbrand
+};
+  
+L.control.layers(baseMaps, overlays).addTo(map2);
+
+ });
+  
+// Map 4: Median Income in different States 
+
+ $(document).ready(function() {
+
+ //basemap
+var Hydda_Base = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+    var Esri_NatGeoWorldMap =
+        L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+          maxZoom: 16
+    });
+
+  var OpenStreetMap = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+
+//map
+var map4= L.map('map4', {
+  center: new L.LatLng(38.21, -97.4507),
+  zoom: 4,
+  layers: [OpenStreetMap]
+    });
+var baseMaps = {
+  "Topgraphy Map": Esri_NatGeoWorldMap,
+  "Open Street Map": OpenStreetMap,
+  "Sea Map":Hydda_Base,
+};
+
+L.control.layers(baseMaps).addTo(map4);
+
+//get color
+function getColorpk(d) {
+  return d <= '60000' ? '#C24641' :
+  d <= '70000' ? "#DC381F" :
+  d <= '90000' ? "#990012" :
+  d <='110000' ? "#C04000" :
+  d <= '150000' ? "#F88017" :
+  "#FF0000";
+}
+
+function stylepk(feature) {
+    return {
+        fillColor: getColorpk(feature.properties.MedIcome),
+        weight: 0.75,
+        opacity: 1,
+        color: 'black',
+        dashArray: '0',
+        fillOpacity: 1
+    };
+}
+
+//geojson
+link="https://rahasan17.github.io/LA458-558/FinalProject/map.json";
+
+var MedIncome= new L.GeoJSON.AJAX(link , {
+  style: stylepk,
+  onEachFeature: function (feature, layer) {
+    htmlText = "<strong>" + feature.properties.NAME+ "<strong><br> Median income: $</strong>"+feature.properties.MedIcome;
+    layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.NAME);
+    }
+}).addTo(map4);
+   
+ var legendpk = L.control({
+  position: 'bottomleft'
+});
+   
+ legendpk.onAdd = function(map4) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+    pop_size = [60000,70000,90000,110000, 150000],
+    labels = ['below 60,000','60,000-70000', '70000-90000', '90000-110000','>1100000'];
+
+   div.innerHTML += "<strong> Median Income </strong><br> <br>";
+  for (var i = 0; i < pop_size.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColorpk(pop_size[i] ) + ' "></i> ' +
+      labels[i]+'<br><br>';
+  }
+
+  return div;
+};
+legendpk.addTo(map4);
+ 
+ var NewMexico= L.marker([34, -106]).bindPopup('Highest Median Income').addTo(map4);
+   
+  WVirginia=L.marker([39, -80.5]).bindPopup('Lowest Median Income').addTo(map4);
+
+
+ $('#ahasanbg1').click(function () {
+        map4.setView([34, -106], 6.5);
+    });
+
+    $('#ahasanbg23').click(function () {
+        map4.setView([39, -80.5], 6.5);
+    });
+ });  
+//map 5: Highchart showing the population density in the US
+</script>
+  <script>
+    Highcharts.chart('map5', {
+    chart: {
+        type: 'tilemap',
+        inverted: true,
+        height: '80%'
+    },
+
+    title: {
+        text: 'U.S. States by Population Density in 2015'
+    },
+
+    subtitle: {
+        text: 'Source:<a href="https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States_by_population_density">Wikipedia</a>'
+    },
+
+    xAxis: {
+        visible: false
+    },
+
+    yAxis: {
+        visible: false
+    },
+
+    colorAxis: {
+        dataClasses: [{
+            from: 0,
+            to: 1,
+            color: '#F9EDB3',
+            name: '< 2/sq.mi'
+        }, {
+            from: 2,
+            to: 50,
+            color: '#FFC428',
+            name: '2/sq.mi-50/sq.mi'
+        }, {
+            from: 50,
+            to: 100,
+            color: '#FF7987',
+            name: '50/sq.mi - 100/sq.mi'
+        }, {
+            from: 100,
+            to: 300,
+            color: '#E2A76F',
+            name: '100/sq.mi - 300/sq.mi'
+        },{
+            from: 300,
+            to: 600,
+            color: '#A52A2A',
+            name: '300/sq.mi - 600/sq.mi'
+        },{
+            from: 600,
+            color: '#FF2371',
+            name: '> 600/sq.mi'
+        }]
+    },
+
+    tooltip: {
+        headerFormat: '',
+        pointFormat: 'The population density of <b> {point.name}</b> is <b>{point.value} per sq. mile.</b>'
+    },
+
+    plotOptions: {
+        series: {
+            dataLabels: {
+                enabled: true,
+                format: '{point.hc-a2}',
+                color: '#000000',
+                style: {
+                    textOutline: false
+                }
+            }
+        }
+    },
+
+    series: [{
+        name: '',
+        data: [{
+            'hc-a2': 'AL',
+            name: 'Alabama',
+            region: 'South',
+            x: 6,
+            y: 7,
+            value: 95
+        }, {
+            'hc-a2': 'AK',
+            name: 'Alaska',
+            region: 'West',
+            x: 0,
+            y: 0,
+            value: 1
+        }, {
+            'hc-a2': 'AZ',
+            name: 'Arizona',
+            region: 'West',
+            x: 5,
+            y: 3,
+            value: 60
+        }, {
+            'hc-a2': 'AR',
+            name: 'Arkansas',
+            region: 'South',
+            x: 5,
+            y: 6,
+            value: 57
+        }, {
+            'hc-a2': 'CA',
+            name: 'California',
+            region: 'West',
+            x: 5,
+            y: 2,
+            value: 251
+        }, {
+            'hc-a2': 'CO',
+            name: 'Colorado',
+            region: 'West',
+            x: 4,
+            y: 3,
+            value: 52
+        }, {
+            'hc-a2': 'CT',
+            name: 'Connecticut',
+            region: 'Northeast',
+            x: 3,
+            y: 11,
+            value: 741
+        }, {
+            'hc-a2': 'DE',
+            name: 'Delaware',
+            region: 'South',
+            x: 4,
+            y: 9,
+            value: 485
+        }, {
+            'hc-a2': 'DC',
+            name: 'District of Columbia',
+            region: 'South',
+            x: 4,
+            y: 10,
+            value: 11011
+        }, {
+            'hc-a2': 'FL',
+            name: 'Florida',
+            region: 'South',
+            x: 8,
+            y: 8,
+            value: 378
+        }, {
+            'hc-a2': 'GA',
+            name: 'Georgia',
+            region: 'South',
+            x: 7,
+            y: 8,
+            value: 177
+        }, {
+            'hc-a2': 'HI',
+            name: 'Hawaii',
+            region: 'West',
+            x: 8,
+            y: 0,
+            value: 222
+        }, {
+            'hc-a2': 'ID',
+            name: 'Idaho',
+            region: 'West',
+            x: 3,
+            y: 2,
+            value: 20
+        }, {
+            'hc-a2': 'IL',
+            name: 'Illinois',
+            region: 'Midwest',
+            x: 3,
+            y: 6,
+            value: 231
+        }, {
+            'hc-a2': 'IN',
+            name: 'Indiana',
+            region: 'Midwest',
+            x: 3,
+            y: 7,
+            value: 184
+        }, {
+            'hc-a2': 'IA',
+            name: 'Iowa',
+            region: 'Midwest',
+            x: 3,
+            y: 5,
+            value: 55
+        }, {
+            'hc-a2': 'KS',
+            name: 'Kansas',
+            region: 'Midwest',
+            x: 5,
+            y: 5,
+            value: 36
+        }, {
+            'hc-a2': 'KY',
+            name: 'Kentucky',
+            region: 'South',
+            x: 4,
+            y: 6,
+            value: 112
+        }, {
+            'hc-a2': 'LA',
+            name: 'Louisiana',
+            region: 'South',
+            x: 6,
+            y: 5,
+            value: 108
+        }, {
+            'hc-a2': 'ME',
+            name: 'Maine',
+            region: 'Northeast',
+            x: 0,
+            y: 11,
+            value: 43
+        }, {
+            'hc-a2': 'MD',
+            name: 'Maryland',
+            region: 'South',
+            x: 4,
+            y: 8,
+            value: 618
+        }, {
+            'hc-a2': 'MA',
+            name: 'Massachusetts',
+            region: 'Northeast',
+            x: 2,
+            y: 10,
+            value: 871
+        }, {
+            'hc-a2': 'MI',
+            name: 'Michigan',
+            region: 'Midwest',
+            x: 2,
+            y: 7,
+            value: 175
+        }, {
+            'hc-a2': 'MN',
+            name: 'Minnesota',
+            region: 'Midwest',
+            x: 2,
+            y: 4,
+            value: 68
+        }, {
+            'hc-a2': 'MS',
+            name: 'Mississippi',
+            region: 'South',
+            x: 6,
+            y: 6,
+            value: 63
+        }, {
+            'hc-a2': 'MO',
+            name: 'Missouri',
+            region: 'Midwest',
+            x: 4,
+            y: 5,
+            value: 88
+        }, {
+            'hc-a2': 'MT',
+            name: 'Montana',
+            region: 'West',
+            x: 2,
+            y: 2,
+            value: 7
+        }, {
+            'hc-a2': 'NE',
+            name: 'Nebraska',
+            region: 'Midwest',
+            x: 4,
+            y: 4,
+            value: 24
+        }, {
+            'hc-a2': 'NV',
+            name: 'Nevada',
+            region: 'West',
+            x: 4,
+            y: 2,
+            value: 26
+        }, {
+            'hc-a2': 'NH',
+            name: 'New Hampshire',
+            region: 'Northeast',
+            x: 1,
+            y: 11,
+            value: 148
+        }, {
+            'hc-a2': 'NJ',
+            name: 'New Jersey',
+            region: 'Northeast',
+            x: 3,
+            y: 10,
+            value: 1218
+        }, {
+            'hc-a2': 'NM',
+            name: 'New Mexico',
+            region: 'West',
+            x: 6,
+            y: 3,
+            value: 17
+        }, {
+            'hc-a2': 'NY',
+            name: 'New York',
+            region: 'Northeast',
+            x: 2,
+            y: 9,
+            value: 420
+        }, {
+            'hc-a2': 'NC',
+            name: 'North Carolina',
+            region: 'South',
+            x: 5,
+            y: 9,
+            value: 206
+        }, {
+            'hc-a2': 'ND',
+            name: 'North Dakota',
+            region: 'Midwest',
+            x: 2,
+            y: 3,
+            value: 10
+        }, {
+            'hc-a2': 'OH',
+            name: 'Ohio',
+            region: 'Midwest',
+            x: 3,
+            y: 8,
+            value: 284
+        }, {
+            'hc-a2': 'OK',
+            name: 'Oklahoma',
+            region: 'South',
+            x: 6,
+            y: 4,
+            value: 57
+        }, {
+            'hc-a2': 'OR',
+            name: 'Oregon',
+            region: 'West',
+            x: 4,
+            y: 1,
+            value: 41
+        }, {
+            'hc-a2': 'PA',
+            name: 'Pennsylvania',
+            region: 'Northeast',
+            x: 3,
+            y: 9,
+            value: 286
+        }, {
+            'hc-a2': 'RI',
+            name: 'Rhode Island',
+            region: 'Northeast',
+            x: 2,
+            y: 11,
+            value: 1021
+        }, {
+            'hc-a2': 'SC',
+            name: 'South Carolina',
+            region: 'South',
+            x: 6,
+            y: 8,
+            value: 162
+        }, {
+            'hc-a2': 'SD',
+            name: 'South Dakota',
+            region: 'Midwest',
+            x: 3,
+            y: 4,
+            value: 11
+        }, {
+            'hc-a2': 'TN',
+            name: 'Tennessee',
+            region: 'South',
+            x: 5,
+            y: 7,
+            value: 160
+        }, {
+            'hc-a2': 'TX',
+            name: 'Texas',
+            region: 'South',
+            x: 7,
+            y: 4,
+            value: 105
+        }, {
+            'hc-a2': 'UT',
+            name: 'Utah',
+            region: 'West',
+            x: 5,
+            y: 4,
+            value: 36
+        }, {
+            'hc-a2': 'VT',
+            name: 'Vermont',
+            region: 'Northeast',
+            x: 1,
+            y: 10,
+            value: 67
+        }, {
+            'hc-a2': 'VA',
+            name: 'Virginia',
+            region: 'South',
+            x: 5,
+            y: 8,
+            value: 212
+        }, {
+            'hc-a2': 'WA',
+            name: 'Washington',
+            region: 'West',
+            x: 2,
+            y: 1,
+            value: 107
+        }, {
+            'hc-a2': 'WV',
+            name: 'West Virginia',
+            region: 'South',
+            x: 4,
+            y: 7,
+            value: 76
+        }, {
+            'hc-a2': 'WI',
+            name: 'Wisconsin',
+            region: 'Midwest',
+            x: 2,
+            y: 5,
+            value: 106
+        }, {
+            'hc-a2': 'WY',
+            name: 'Wyoming',
+            region: 'West',
+            x: 3,
+            y: 3,
+            value: 6
+        }]
+    }]
+});
+  </script>
+
+</div>
+</body>
+</html>
+
+
+
+  
