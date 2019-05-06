@@ -235,9 +235,9 @@ li a:hover {
   
   header, footer{ width: 1190px; padding: 0.20em; color: white; background-color: DarkSlateGray; clear: none; text-align: center; justify-content: left}
   h1 {color: White; text-decoration: bold; text-align: center; background: none; font-size: 28px; font-family: Calibri;}
-  h4 {margin-right:50px; color: White; text-decoration: bold; text-align: right; background: none; font-size: 28px; font-family: Calibri;}
+  h4 {margin-right:50px; color: White; text-decoration: bold; text-align: center; background: none; font-size: 44px; font-family: Calibri;}
   h2 {color:#954535; text-align: left; font-size: 24px; font-family: Calibri;}
-  h3 {margin-right:50px; color:#B6B6B4; text-align: right; font-size: 22px; font-family: Calibri;}
+  h3 {margin-right:50px; color:#B6B6B4; text-align: center; font-size: 22px; font-family: Calibri;}
   h5 {color:#B6B6B4; text-align: left; font-size: 22px; font-family: Calibri;}
   p { color:Black;  margin-right: 2%; margin-left: 2%; text-align: justify; font-size: 15px; font-family: Calibri; }
   a { color:Blue; text-align: left; margin: auto;  font-size: 15px; font-family: Calibri;}
@@ -259,15 +259,15 @@ li a:hover {
           <li><a href="#map2"> Housing Cost Burden </a></li>
           <li><a href="#map4"> Income Information </a></li>
           <li><a href="https://rahasan17.github.io/LA458-558/FinalProject/Proposal.html">Project Proposal</a></li>
+          <li><a href="https://rahasan17.github.io/LA458-558/FinalProject/presentation.pptx">Project Presentation</a></li>
         </ul>
       </div>
   
    <div id = "header">
      <div id="header1">
-       <img id="image" src="https://wtar3.files.wordpress.com/2013/07/obama-housing-crisis1.jpg" alt="Housing Crisis" style="width:485px;height:300px;" align="left" opacity= "0.25">
-       <h4> Mapping Housing Ownership and <br>Demographic Profile of the U.S. </h4>
+       <h4> Mapping Housing Ownership Type and <br>Demographic Profile of the U.S. </h4>
        <br>
-       <h3><b>Rakibul Ahasan</b><br> 05/02/2019 </h3> <br> <br><br> <br><br> <br><br>
+       <h3><b>Rakibul Ahasan</b><br> 05/06/2019 </h3> <br>
      </div>
     </div>
     <br> 
@@ -298,28 +298,20 @@ li a:hover {
       <br><br>
       <div class="btn-group-justified">
         <div class="btn-group">
-          <button type="button" id="white" color="black" class="btn btn-dark"> White </button>
-          <button type="button" id="black" class="btn btn-success"> Black</button>
-          <button type="button" id="hispanic" class="btn btn-dark"> Hispanic</button>
-          <button type="button" id="asian" class="btn btn-success"> Asian</button>
-          <button type="button" id="americanIndian" class="btn btn-dark">American Indian or Alaska Native</button>
-          <button type="button" id="nativeHawaiian" class="btn btn-success"> Native Hawaiian </button>
-          <button type="button" id="moreRaces" class="btn btn-dark"> Two Or More Races </button> <br>
+          <button type="button" id="white" color="black" class="btn btn-dark btn-sm"> White </button>
+          <button type="button" id="black" class="btn btn-success btn-sm"> Black</button>
+          <button type="button" id="hispanic" class="btn btn-info btn-sm"> Hispanic</button>
+          <button type="button" id="asian" class="btn btn-dark btn-sm"> Asian</button>
+          <button type="button" id="americanIndian" class="btn btn-success btn-sm">American Indian or Alaska Native</button>
+          <button type="button" id="nativeHawaiian" class="btn btn-info btn-sm"> Native Hawaiian </button>
+          <button type="button" id="moreRaces" class="btn btn-dark btn-sm"> Two Or More Races </button> <br>
         </div>
       </div>
     </div>
     
      <div id='map'></div>
     <br> 
-     <div  id='map3container'>
-       <h2 > <b> Cost Burden for Housing </b> </h2>
-       The definition of Housing Cost Burden are provided below:
-       <br>
-       <b> Housing Cost Burden : </b> Percentage of household income spent for mortgage costs or gross rent. According to HUD programs, households spending more than 30 percent of income for these housing costs are considered to be "cost-burdened".
-          <br><br>
-       In the United States, if the monthly expenditure for housing purposes is below 30% of any Individuals monthly income, it is called within affordable limit. However, there are other parameters which need to be considered in calculating this limit.
-      </div>
-     <div id='map2'></div>
+     
 <br>
       <div  id='map4container'>
    <h2 > <b> Income Information </b> </h2>
@@ -347,15 +339,12 @@ The housing price or renter-occupied housing do not increase only if the state i
 <br><br>The states in both the coastal areas have a higher rented occupied housing units compared to the midwestern states. At the same time, the median income and housing occupancy does not really dependent on each other (from the maps).    
 For example, New Mexico has the highest annual median income among the states. Highever, it is neither the most densely populated state nor the state with most renter-occupied housing. <br><br>
       <b> Maps included in this page</b> 
-      <br>
+      <br><br>
       1. Percentage of Renter-Occupied Housinng in each States <br>
       2. Population in each Major Races in Each States <br>
-      3. Map showing Housing Cost Burden and GDP Rank in Each States <br>
-      4. Median Income of each of the States <br>
-      5. Highmap showing the Population Density in Each States.
-      <br> <br>
-      Data used here was collected from the Census Bureau website and wikipedia (wikipedia.org).
-      
+      3. Median Income of each of the States <br>
+      4. Highmap showing the Population Density in Each States.<br><br>
+ Data used here was collected from the Census Bureau website and wikipedia (wikipedia.org).     
 </div>    
     <div class="sametext" id='map5'></div>
  <div id = "header">   
@@ -489,7 +478,7 @@ var Hydda_Base = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/base/{z}/{x
 var map = L.map('map', {
   center: new L.LatLng(38.21, -97.4507),
   zoom: 4,
-  layers: [Hydda_Base]
+  layers: [OpenStreetMap]
 });
 var baseMaps = {
   "Topgraphy Map": Esri_NatGeoWorldMap,
@@ -521,7 +510,7 @@ function style2(feature) {
 }
 
 //geojson
-link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+link="https://rahasan17.github.io/LA458-558/FinalProject/map.json";
 
 var white = new L.GeoJSON.AJAX(link , {
   style: style2,
@@ -573,7 +562,7 @@ function style3(feature) {
 }
 
 //geojson
-link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+link="https://rahasan17.github.io/LA458-558/FinalProject/map.json";
 
 var black = new L.GeoJSON.AJAX(link , {
   style: style3,
@@ -625,7 +614,7 @@ function style4(feature) {
 }
 
 //geojson
-link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+link="https://rahasan17.github.io/LA458-558/FinalProject/map.json";
 
 var hispanic= new L.GeoJSON.AJAX(link , {
   style: style4,
@@ -680,7 +669,7 @@ function style5(feature) {
 }
 
 //geojson
-link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+link="https://rahasan17.github.io/LA458-558/FinalProject/map.json";
 
 var asian= new L.GeoJSON.AJAX(link , {
   style: style5,
@@ -735,7 +724,7 @@ function style6(feature) {
 }
 
 //geojson
-link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+link="https://rahasan17.github.io/LA458-558/FinalProject/map.json";
 
 var americanIndian= new L.GeoJSON.AJAX(link , {
   style: style6,
@@ -789,7 +778,7 @@ function style7(feature) {
     };
 }
 //geojson
-link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+link="https://rahasan17.github.io/LA458-558/FinalProject/map.json";
 
 
 var nativeHawaiian= new L.GeoJSON.AJAX(link , {
@@ -845,7 +834,7 @@ function style8(feature) {
 }
 
 //geojson
-link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
+link="https://rahasan17.github.io/LA458-558/FinalProject/map.json";
 
 var moreRaces= new L.GeoJSON.AJAX(link , {
   style: style8,
@@ -1008,153 +997,8 @@ $("#white").click(function() {
    
  });  
 
-  // Map 3: The GDP and cost burden for Housing in each state is shown here
-
-  $(document).ready(function() {
-
- //basemap
-var Hydda_Base = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
-  maxZoom: 18,
-  attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-});
-    var Esri_NatGeoWorldMap =
-        L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-          attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
-          maxZoom: 16
-    });
-
-  var OpenStreetMap = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-});
-
-
-//map
-var map2= L.map('map2', {
-  center: new L.LatLng(38.21, -97.4507),
-  zoom: 4,
-  layers: [OpenStreetMap]
-    });
-var baseMaps = {
-  "Topgraphy Map": Esri_NatGeoWorldMap,
-  "Open Street Map": OpenStreetMap,
-  "Sea Map":Hydda_Base,
-};
-
-
-//geojson
-link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
   
-function getColordp(d) {
-  return d <= '10' ? '#7E587E' :
-  d <= '20' ? "#571B7E" :
-  d <= '30' ? "#583759" :
-  d <='40' ? "#461B7E" :
-  d <= '51' ? "#4E387E" :
-  "#614051";
-}
-
-function styledp(feature) {
-    return {
-        fillColor: getColordp(feature.properties.GDP_R),
-        weight: 0.5,
-        opacity: 1,
-        color: 'black',
-        dashArray: '0',
-        fillOpacity: 1
-    };
-}
-
-//geojson
-link="https://rahasan17.github.io/LA458-558/FinalProject/finalstate.json";
-
-var domesticproduct = new L.GeoJSON.AJAX(link , {
-  style: styledp,
-  onEachFeature: function (feature, layer) {
-        htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> Total GDP in Million: </strong>"  + feature.properties.GDP_M + "<br><strong>Rank : </strong>"+feature.properties.GDP_R;
-        layer.bindPopup(htmlText);
-    layer.bindTooltip(feature.properties.NAME);
-    }
-}).addTo(map2);
-
-function getColorcb(d) {
-    return d <= '10' ? '#E78A61' :
-    d <= '20' ? "#E18B6B" :
-   d <= '30' ? "#E77471" :
-    d <='40' ? "#E75D59" :
-   d <= '51' ? "#FF0000" :
-    "#d9ef8b";
-}
-
-function stylecb(feature) {
-    return {
-        fillColor: getColorcb(feature.properties.GDP_R),
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.8
-    };
-}
-var costbrand = new L.GeoJSON.AJAX(link , {
-  style: stylecb,
-  onEachFeature: function (feature, layer) {
-        htmlText = "<strong>" + feature.properties.NAME+ "</strong><br><strong> % of People having more 30% cost-burben for housing: </strong>"  + feature.properties.Cburden_R1 + "<br><strong>Rank : </strong>"+feature.properties.Cburden_R;
-        layer.bindPopup(htmlText);
-    layer.bindTooltip(feature.properties.NAME);
-    }
-});
-
-var legendcb = L.control({
-  position: 'bottomleft'
-});
-
-legendcb.onAdd = function(map2) {
-
-  var div = L.DomUtil.create('div', 'info legend'),
-    pop_size = [10,25, 40,50],
-    labels = ['0-10','10-25', '25-40', '40- 50'];
-
-   div.innerHTML += "<strong> Cost Burden Rank </strong><br> <br>";
-  for (var i = 0; i < pop_size.length; i++) {
-    div.innerHTML +=
-      '<i style="background:' + getColorcb(pop_size[i] ) + ' "></i> ' +
-       labels[i]+'<br><br>';
-  }
-  return div;
-};
-  
-legendcb.addTo(map2);
-var legenddp = L.control({
-  position: 'bottomright'
-});
-
-legenddp.onAdd = function(map2) {
-
-  var div = L.DomUtil.create('div', 'info legend'),
-    pop_size = [10,25, 40,50],
-    labels = ['0-10','10-25', '25-40', '40- 50'];
-   div.innerHTML += "<strong> GDP RANK</strong><br> <br>";
-  for (var i = 0; i < pop_size.length; i++) {
-    div.innerHTML +=
-      '<i style="background:' + getColordp(pop_size[i] ) + ' "></i> ' +
-       labels[i]+'<br><br>';
-  }
-  return div;
-};
-
- legenddp.addTo(map2);
- 
-var overlays = {
-  "GDP RANK": domesticproduct,
-  "Cost Burden Rank" :costbrand
-};
-  
-L.control.layers(baseMaps, overlays).addTo(map2);
-
- });
-  
-// Map 4: Median Income in different States 
+// Map 3: Median Income in different States 
 
  $(document).ready(function() {
 
@@ -1256,7 +1100,7 @@ legendpk.addTo(map4);
         map4.setView([39, -80.5], 6.5);
     });
  });  
-//map 5: Highchart showing the population density in the US
+//map 4: Highchart showing the population density in the US
 </script>
   <script>
     Highcharts.chart('map5', {
